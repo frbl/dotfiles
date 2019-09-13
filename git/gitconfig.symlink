@@ -1,0 +1,71 @@
+[alias]
+  track = "!git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`"
+  co = checkout
+  cob = checkout -b
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  l = log --pretty=frank --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+	undo = reset --soft HEAD~1
+  brd = "!git branch --merged | grep -v -E '\\*|master|production' | xargs -n 1 git branch -d; git fetch --prune --all"
+	d = difftool
+	accept-ours = "!f() { git checkout --ours -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+	accept-theirs = "!f() { git checkout --theirs -- \"${@:-.}\"; git add -u \"${@:-.}\"; }; f"
+  ignore = "!git rm -r --cached .; git commit -a"
+
+[user]
+	email = frank.blaauw@gmail.com
+	name = Frank Blaauw
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[core]
+	excludesfile = /Users/frbl/.gitignore
+
+[color]
+  	ui = auto
+
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+	;ff = only
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
+
+[mergetool]
+	prompt = false
+	keepBackup = false
+
+[diff]
+	tool = vimdiff
+
+;[mergetool "Kaleidoscope"]
+  ;cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  ;trustexitcode = true
+
+[reflow]
+	git-server = GitHub
+
+[push]
+	default = current
+
+[init]
+	templatedir = ~/.git_template
+[pretty]
+	frank = %Cgreen%h%Creset%x09%aN%x09%aI%x09%s
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
