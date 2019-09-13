@@ -1,0 +1,17 @@
+#!/bin/bash
+brew update
+cask=$(brew cask list | grep -w "$1")
+brew=$(brew list | grep -w "$1")
+echo "Brew: $brew"
+echo "Cask: $cask"
+if [ -n "$brew" ]; then
+  #statements
+  echo Running brew
+  brew upgrade "$1"
+elif [ -n "$cask" ]; then
+  echo Running brew cask
+  brew cask remove --force "$1"
+  brew cask install "$1"
+else
+  echo 'not found'
+fi

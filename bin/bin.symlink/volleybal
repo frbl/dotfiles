@@ -1,0 +1,29 @@
+#!/var/www/rvm/rubies/ruby-current/bin/ruby
+# frozen_string_literal: true
+
+require 'httparty'
+require 'nokogiri'
+res = HTTParty.get('http://www.volleybal.nl/application/handlers/tabs.php?page=default&url=%2Fcompetitie%2Fpoule%2FH3A%2F1000%2Fstand')
+
+page = Nokogiri::HTML(res)
+teams = page.css('tbody').css('tr').css('td.teamRank').css('a').map { |x| x['title'] }
+matches = page.css('tbody').css('tr').map { |x| x.css('td.points')[0].text.to_i }
+points = page.css('tbody').css('tr').map { |x|  x.css('td.points')[1].text.to_i }
+
+zipped = teams.zip(matches, points)
+offset = 4
+longest_key = teams.max_by(&:length)
+team_label = 'Teams'
+point_label = 'Points'
+virtual_score_label = 'Points / match'
+max_possible_label = 'Max possible'
+
+printf "%-#{longest_key.length + offset}s\t%s\t%s\t%s\n", team_label, point_label, virtual_score_label, max_possible_label
+(6 + "\t\t".length + longest_key.length + offset + point_label.length + virtual_score_label.length + max_possible_label.length).times { print '-' }
+puts
+number_of_matches = (teams.length - 1) * 2
+max_points = number_of_matches * 4
+zipped.each do |team, match, point|
+  max_points_possible = point + (max_points - (match * 4))
+  printf "%-#{longest_key.length + 4}s\t%s\t%s\t\t%s\n", team, point, (point.to_f / match.to_f).round(2), max_points_possible
+end
