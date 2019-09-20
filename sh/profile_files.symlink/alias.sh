@@ -280,6 +280,13 @@ duald() {
   xrandr --output HDMI-1 --left-of LVDS-1
 }
 
+dualdright() {
+  xrandr --output VGA-1 --off
+  xrandr --output HDMI-1 --auto
+  xrandr --output LVDS-1 --auto
+  xrandr --output HDMI-1 --right-of LVDS-1
+}
+
 dualdvgar() {
   xrandr --output HDMI-1 --off
   xrandr --output VGA-1 --rotate left --auto
