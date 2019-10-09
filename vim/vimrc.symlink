@@ -112,19 +112,19 @@ Plug 'vim-scripts/twilight'
 Plug 'vim-scripts/twilight256.vim'
 
 " Support for editor config (editorconfig.org)
-"Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Eaxy aligning tables etc
-"Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " Autocompletion / Emmet. Emmet is a tool for web development autocompletion.
 Plug 'mattn/emmet-vim'
 
 " Seamless tmux and vim navigation
-"Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Repat allows for repeating plugin actions
-"Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " nerdtree file browser
 Plug 'scrooloose/nerdtree'
@@ -146,7 +146,7 @@ endif
 Plug 'junegunn/fzf.vim'
 
 " Ctag support
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " git integration
 Plug 'tpope/vim-fugitive'
@@ -159,7 +159,7 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 
 " Easy use of the system clipboard
-"Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-system-copy'
 
 " Snippet support
 " Dependency for snipmate
@@ -167,7 +167,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " JavaScript
-"Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
 
 " Ruby
@@ -176,14 +176,14 @@ Plug 'leafgarland/typescript-vim'
 "Plug 'tpope/vim-rails'
 
 " R
-"Plug 'jalvesaq/Nvim-R'
+Plug 'jalvesaq/Nvim-R'
 
 " VimDiff
-"Plug 'chrisbra/vim-diff-enhanced'
+Plug 'chrisbra/vim-diff-enhanced'
 
 " Testing
-"Plug 'janko-m/vim-test'
-"Plug 'tpope/vim-dispatch'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
 
 call plug#end() " required
 
@@ -196,13 +196,11 @@ highlight clear ALEWarningSign
 let b:ale_sign_error = '!'
 let b:ale_sign_warning = '.'
 let b:ale_linters = {
-\   'javascript': ['standard'],
-\   'typescript': ['tslint']
+\   'javascript': ['standard']
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['standard'],
-\   'typescript': ['tslint'],
 \   'html': ['prettier'],
 \   'json': ['jq'],
 \   'python':  ['yapf'],
