@@ -15,19 +15,6 @@ github_clone() {
   cd $pre
 }
 
-github_http_clone() {
-  pre=`pwd`
-  org=$1
-  repo=$2
-  mkdir -p general
-  cd general
-  if [ ! -d "$2" ]
-  then
-    git clone https://github.com/$org/$repo.git
-  fi
-  cd $pre
-}
-
 gitlab_clone() {
   pre=`pwd`
   org=$1
@@ -139,5 +126,4 @@ gitlab_clone "vitens/ecida" "ecida-poc"
 gitlab_clone "vitens/ecida" "utilities"
 
 
-github_http_clone "jvm-operators" "abstract-operator"
 
