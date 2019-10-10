@@ -136,6 +136,7 @@ roqua_clone "roqua" "roqua" "roqua"
 # Vitens
 #gitlab_clone "vitens/Nachtwacht/" "nachtwacht-core"
 gitlab_clone "vitens/ecida" "ecida-poc"
+gitlab_clone "vitens/ecida" "abstract-operator"
 gitlab_clone "vitens/ecida" "utilities"
 
 
