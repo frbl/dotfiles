@@ -10,12 +10,12 @@
 
 
 order += "tztime local"
-order += "wireless wlan0"
+order += "wireless wlp3s0"
 order += "ethernet eth0"
 order += "battery 0"
 
-wireless wlan0 {
-    format_up = "%quality  %essid %ip"
+wireless wlp3s0 {
+    format_up = "%quality %essid %ip"
     format_down = ""
 }
 
@@ -37,9 +37,9 @@ battery 0 {
     low_threshold = 11
     threshold_type = percentage
     hide_seconds = true
-    status_chr = " "
-    status_bat = " "
-    #status_unk = " "
-    status_full = " "
+    status_chr = "^"
+    status_bat = "⌄"
+    status_unk = "?"
+    status_full = "-"
 }
 

@@ -6,6 +6,7 @@
       <value type="string" value="chromium"/>
       <value type="string" value="Dropbox"/>
       <value type="string" value="Electron"/>
+      <value type="string" value="Firefox"/>
       <value type="string" value="IDEA"/>
       <value type="string" value="Insync"/>
       <value type="string" value="jetbrains-toolbox"/>
