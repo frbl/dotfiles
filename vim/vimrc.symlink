@@ -120,6 +120,8 @@ Plug 'junegunn/vim-easy-align'
 " Autocompletion / Emmet. Emmet is a tool for web development autocompletion.
 Plug 'mattn/emmet-vim'
 
+Plug 'junegunn/goyo.vim'
+
 " Seamless tmux and vim navigation
 Plug 'christoomey/vim-tmux-navigator'
 
