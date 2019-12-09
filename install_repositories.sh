@@ -97,7 +97,9 @@ gitlab_clone "researchable" "landingpage"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
+gitlab_clone "researchable/general" "dashboard"
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
+gitlab_clone "researchable/general/gitlab" "cicd-variable-importer"
 
 # SDV
 gitlab_clone "researchable/sport-data-valley/sdv" "presentation-sdv-pitch"
@@ -114,7 +116,7 @@ gitlab_clone "researchable/sport-data-valley/MVP" "integration-tests"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-integrations"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-questionnaires"
 
-gitlab_clone "sport-data-valley" "poc-data"
+#gitlab_clone "sport-data-valley" "poc-data"
 
 # i-shared
 #gitlab_clone "researchable/samen-sturen" "svc-visualization-r"
