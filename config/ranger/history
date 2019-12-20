@@ -4,7 +4,6 @@ w
 search svg
 search zip
 open_with jh:q
-mkdir swimming
-mkdir riding
-rename RidingDashboard.jsx
-bulkrename 
+rename sdv
+rename planningvariables
+delete
