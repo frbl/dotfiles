@@ -1,0 +1,100 @@
+#!/usr/bin/env Rscript
+args = commandArgs(trailingOnly=TRUE)
+if(length(args) == 0) stop('Please provide the name of the class')
+
+args <- unique(args)
+
+create_tests <- FALSE
+tests_param <- '-t'
+if(tests_param %in% args) {
+  create_tests = TRUE
+  args <- setdiff(args, tests_param)
+}
+
+devtools::load_all()
+
+object_summaries <- function(x, exclude = NULL) {
+  if (length(x) == 0)
+    return(NULL)
+
+  if (is.list(x))
+    obj_names <- names(x)
+  else if (is.environment(x))
+    obj_names <- ls(x, all.names = TRUE)
+
+  obj_names <- setdiff(obj_names, exclude)
+
+  values <- vapply(obj_names, function(name) {
+    if (is.environment(x) && bindingIsActive(name, x)) {
+      "active binding"
+    } else {
+      obj <- .subset2(x, name)
+      if (is.function(obj)){
+        deparse(args(obj))[[1L]]
+      }
+    }
+  }, FUN.VALUE = character(1))
+
+  list(name = obj_names, params = values)
+}
+
+
+strAppend <- function(base, strings) {
+  cur <- paste(strings, collapse = "")
+  res <- paste(base, cur, sep ="")
+  paste(res, '\n')
+}
+
+generate_documentation <- function(class_parsed){
+  result <- strAppend('', c(" #' @section Methods:"))
+  result <- strAppend(result, c(" #' \\describe{ "))
+  i = 1
+  x <- object_summaries(class_parsed$public_methods)
+  for (i in 1:length(x[[1]])) {
+    name <- x[[1]][[i]]
+    params <- x[[2]][[i]]
+    params <- gsub("^function ","",params)
+    params <- gsub(", $","",params)
+    result <- strAppend(result, c(" #'   \\item{\\code{", name, params, "}}{"))
+    result <- strAppend(result, c(" #'     <<description>>"))
+
+    # @Params
+    separates <- gsub("\\(", '', params)
+    separates <- gsub("\\)", '', separates)
+    separates <- strsplit(separates, ', ')[[1]]
+    for (sep in separates) {
+      if(sep != ' ') result <- strAppend(result, c(" #'     @param ", sep))
+    }
+    
+    result <- strAppend(result, c(" #'   }"))
+    result <- strAppend(result, c(" #'"))
+  }
+
+  result <- strAppend(result, c(" #' } "))
+  cat(result)
+}
+
+generate_tests <- function(className, class_parsed){
+  result <- strAppend('', c("context('",className,"')"))
+  result <- strAppend(result, c("described.class <- ",className))
+  result <- strAppend(result, c(""))
+  i = 1
+  x <- object_summaries(class_parsed$public_methods)
+  for (i in 1:length(x[[1]])) {
+    name <- x[[1]][[i]]
+    result <- strAppend(result, c("context(' ", name,"')"))
+    result <- strAppend(result, c(""))
+  }
+  cat(result)
+}
+
+for(class_name in args) {
+  # We have to actually load the object
+  class_parsed <- eval(parse(text=class_name))
+
+  if(create_tests) {
+    generate_tests(class_name, class_parsed)
+  } else {
+    generate_documentation(class_parsed)
+  }
+}

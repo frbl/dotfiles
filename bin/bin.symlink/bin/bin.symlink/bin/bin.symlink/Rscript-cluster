@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+server_name=peregrine-interactive
+scp -r * peregrine:~/tmp
+#rsync -ue ssh $* peregrine:~/tmp
+ssh $server_name -t "cd tmp; Rscript $*"

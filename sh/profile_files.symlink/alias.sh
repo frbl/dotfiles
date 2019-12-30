@@ -246,13 +246,8 @@ alias gcob='g cob'
 
 # docker / kube
 alias k='kubectl'
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  alias d='docker'
-  alias dc='docker-compose'
-else
-  alias d='sudo docker'
-  alias dc='sudo docker-compose'
-fi
+alias d='docker'
+alias dc='docker-compose'
 alias dcbu='dc down; dc build; dc up;'
 
 # Torrenting
