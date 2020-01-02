@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd "$HOME/Workspace/frbl/dotfiles"
 git pull
 
 CACHE_LOCATION="$HOME/.cache/dotfiles"
