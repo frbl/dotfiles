@@ -1,2 +1,3 @@
 #!/bin/bash
-~/Workspace/frbl/dotfiles/sync.sh
+cd ~/Workspace/frbl/dotfiles/
+sync.sh
