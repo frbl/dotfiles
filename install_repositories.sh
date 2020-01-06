@@ -141,6 +141,8 @@ gitlab_clone "vitens/ecida" "ecida-notebook-extension"
 gitlab_clone "vitens/ecida" "ecida-docker-container-builder-service"
 gitlab_clone "vitens/ecida" "abstract-operator"
 gitlab_clone "vitens/ecida" "utilities"
+gitlab_clone "vitens/ecida" "ecida-ds-sample-project"
+
 gitlab_clone "vitens/ecida/templates" "base"
 
 github_http_clone "jvm-operators" "abstract-operator"
