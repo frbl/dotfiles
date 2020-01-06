@@ -1,0 +1,13 @@
+.DS_Store
+tags
+!tags/
+xterm-256color.ti
+screen-256color.ti
+
+# Ruby
+.byebug_history
+
+# Latex
+*.aux
+*.bbl
+*.blg

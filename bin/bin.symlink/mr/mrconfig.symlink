@@ -1,0 +1,15 @@
+
+[Workspace/roqua/hoe_gek_is]
+checkout = git clone 'git@github.com:roqua/hoe_gek_is' 'hoe_gek_is'
+
+[Workspace/roqua/moodmapp]
+checkout = git clone 'git@github.com:roqua/moodmapp' 'moodmapp'
+
+[Workspace/roqua/fizzy]
+checkout = git clone 'git@github.com:roqua/fizzy.git' 'fizzy'
+
+[Workspace/roqua/physiqual]
+checkout = git clone 'git@github.com:roqua/physiqual.git' 'physiqual'
+
+[Workspace/roqua/physiqual.com]
+checkout = git clone 'git@github.com:roqua/physiqual.com' 'physiqual.com'

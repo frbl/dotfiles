@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+server_name=peregrine-interactive
+scp -r . peregrine:~/tmp/python/
+#rsync -uae ssh ./ peregrine:~/tmp/python
+ssh $server_name -t "cd tmp; python3 $*"

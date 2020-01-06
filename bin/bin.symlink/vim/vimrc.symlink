@@ -1,0 +1,678 @@
+" Settings
+""""""""""
+" REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
+filetype plugin indent on    " required
+
+" Needed for Neovim
+let g:python_host_prog = '/Users/frbl/.pyenv/shims/python'
+let g:python3_host_prog = '/Users/frbl/.pyenv/shims/python3'
+if has('python3')
+  silent! python3 1
+endif
+
+"Set wildignores
+set wildignore+=*.swp,*.zip,*.exe,*.class,*.jar,*/tmp/*,*.so
+
+" Tex wildignores
+set wildignore+=*.aux,*.bbl,*.pdf,*.out,*.fls,*.blg,*.synctex.gz,*.cls,*.fdb_latexmk,*.log
+
+"Python ignores
+set wildignore+=*.pyc,*_build/*,*/coverage/*
+
+"Ruby ignores
+set wildignore+=log/development.log
+
+"R ignores
+set wildignore+=*.Rd
+
+set nocompatible                " be iMproved, required
+set nomodeline                  " disable mode lines (security measure)
+filetype off                    " required
+set wildmenu                    " make tab completion for files/buffers act like bash
+set encoding=utf-8              " set encoding for vim
+set termencoding=utf-8          " set encoding for terminal
+set guioptions=aegiLt           " What to do when using gui'd vim
+set shell=bash                  " With this statement vim uses the rubyversion specfied by rvm, for some weird reason
+set fillchars+=stl:\ ,stlnc:\
+"set clipboard=unnamed           " Use regular clibboard
+"set tw=120                     " autobreak at 120
+set incsearch                   " start search from first letter
+set ignorecase                  " case insensitive search
+set smartcase                   " Case insensitive, but not for capital letters (/The wont find the)
+set smarttab                    " Smart use of tabs
+set hlsearch                    " Highlight the search
+set mouse=a                     " enable mouse in the console
+set history=700                 " Have a vim history of x
+set undolevels=700              " Have 700 undo levels
+let mapleader = ","             " Use , as mapleader
+let maplocalleader = '\'        " Use \ as localleader
+set pastetoggle=<F2>            " when in insert mode, press <F2> to go to paste mode, where you can paste mass data that won't be autoindented
+set t_Co=256                    " number of colors
+set ttyfast                     " use fast terminal
+"set ttyscroll=3                 " speedup displaying when scrolling
+set lazyredraw                  " to avoid scrolling problems
+"set foldmethod=indent           " fold based on syntax
+"set cursorline                  " show a line under the cursor
+set ttymouse=sgr
+
+if !exists("g:os")
+  if has("win64") || has("win32") || has("win16")
+    let g:os = "Windows"
+  else
+    let g:os = substitute(system('uname'), '\n', '', '')
+  endif
+endif
+
+" Window resizing
+silent! set winheight=40
+silent! set winminheight=5
+silent! set winwidth=100
+silent! set winminwidth=20
+
+" Save Vim backup files to a (hidden) tmp directory (c) https://github.com/nhejazi
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupskip=/tmp/*,/private/tmp/*
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set writebackup
+
+checktime
+set autoread
+
+"" Identation
+" size of a hard tabstop
+set tabstop=2
+set shiftwidth=2  " size of an indent
+set softtabstop=2 " a combination of spaces and tabs are used to simulate tab stops at a width
+set linebreak     " Don't wrap a line in the middle of a word
+"set backspace=2    " Use backspace as in other apps
+set shiftround    " round the tabs, so its always 2.
+set expandtab
+
+" Dont allow vim to insert hard newlines for wrapping
+set nowrap
+set wrapmargin=0
+
+" Plugins
+"""""""""
+" Install vimplug if it is not installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+" set the runtime path to include Vundle and initialize
+call plug#begin()
+
+" let Vundle manage Vundle, required
+Plug 'gmarik/Vundle.vim'
+
+" Color schemas
+Plug 'vim-scripts/twilight'
+Plug 'vim-scripts/twilight256.vim'
+
+" Support for editor config (editorconfig.org)
+Plug 'editorconfig/editorconfig-vim'
+
+" Eaxy aligning tables etc
+Plug 'junegunn/vim-easy-align'
+
+" Autocompletion / Emmet. Emmet is a tool for web development autocompletion.
+Plug 'mattn/emmet-vim'
+
+Plug 'junegunn/goyo.vim'
+
+" Seamless tmux and vim navigation
+Plug 'christoomey/vim-tmux-navigator'
+
+" Repat allows for repeating plugin actions
+Plug 'tpope/vim-repeat'
+
+" nerdtree file browser
+Plug 'scrooloose/nerdtree'
+
+" Nerdcommenter for bettercommenting
+Plug 'scrooloose/nerdcommenter'
+
+" Status line
+Plug 'itchyny/lightline.vim'
+
+" Use fzf
+if g:os == "Darwin"
+  Plug '/usr/local/opt/fzf'
+elseif g:os == "Linux"
+  Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }
+elseif g:os == "Windows"
+  " nothing
+endif
+Plug 'junegunn/fzf.vim'
+
+" Ctag support
+Plug 'majutsushi/tagbar'
+
+" git integration
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Surround words with open and closing sign (cs<char>, i.e., cs; -> 'helloworld')
+Plug 'tpope/vim-surround'
+
+" Live syntax checking and linting
+Plug 'w0rp/ale'
+
+" Easy use of the system clipboard
+Plug 'christoomey/vim-system-copy'
+
+" Snippet support
+" Dependency for snipmate
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" JavaScript
+Plug 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+
+" Ruby
+"Plug 'vim-ruby/vim-ruby'
+"Plug 'rlue/vim-fold-rspec'
+"Plug 'tpope/vim-rails'
+
+" R
+Plug 'jalvesaq/Nvim-R'
+
+" VimDiff
+Plug 'chrisbra/vim-diff-enhanced'
+
+" Testing
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
+
+call plug#end() " required
+
+" w0rp/ale
+""""""""""
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+highlight clear ALEWarningSign
+let b:ale_sign_error = '!'
+let b:ale_sign_warning = '.'
+let b:ale_linters = {
+\   'javascript': ['standard']
+\}
+
+let g:ale_fixers = {
+\   'javascript': ['standard'],
+\   'html': ['prettier'],
+\   'json': ['jq'],
+\   'python':  ['yapf'],
+\   'ruby':  ['rubocop'],
+\   'sh': ['shfmt'],
+\   'tex': ['latexindent']
+\}
+
+noremap <Leader>] :ALEFix<CR>
+
+"  Easy align
+""""""""
+xmap ga <Plug>(EasyAlign)
+
+" Tagbar
+""""""""
+nmap <leader>b :TagbarToggle<CR>
+" R functionality
+let g:tagbar_type_r = {
+\   'ctagstype' : 'r',
+\   'kinds'     : [
+\     'f:Functions',
+\     'g:GlobalVariables',
+\     'v:FunctionVariables',
+\   ]
+\ }
+
+" Snipmate / Ultisnips
+""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"
+let g:UltiSnipsSnippetDirectories = ['/Users/frbl/.snippets/vim/UltiSnips']
+au FileType javascript :UltiSnipsAddFiletypes javascript
+
+" FZF
+"""""
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+nnoremap <c-p> :FZF<cr>
+
+" JavaScript / HTML / CSS
+"""""""""""""""""""""""""
+" Use leader leader for emmet
+let g:user_emmet_install_global = 0
+autocmd FileType javascript,html,css,eruby EmmetInstall
+let g:user_emmet_leader_key=','
+
+" Testing
+" janko-m/vim-test
+
+if has('nvim')
+  let test#strategy = "neovim"
+else
+  let test#strategy = "dispatch"
+endif
+
+nnoremap <cr> :TestLast<cr>
+nnoremap <leader>T :TestNearest<cr>
+nnoremap <leader>a :TestSuite<cr>
+let test#ruby#rspec#executable = 'sudo bin/be rspec'
+let test#javascript#jest#executable = 'sudo bin/be yarn test'
+
+" R-language
+""""""""""""
+"" NVIM-R
+" re-mappings to send code selections to R console
+vmap <Space> <Plug>RDSendSelection
+nmap <Space> <Plug>RDSendLine
+let R_hi_fun = 0
+let g:R_assign = 0
+
+" Run R repl in tmux
+let R_in_buffer = 1
+
+" Ruby / Rspec
+
+let g:fold_rspec_foldenable = 0      " disables folding (toggle with `zi`)
+let g:fold_rspec_foldlevel = 2       " sets initial open/closed state of all folds (open unless nested more than two levels deep)
+let g:fold_rspec_foldcolumn = 4      " shows a 4-character column on the lefthand side of the window displaying the document's fold structure
+let g:fold_rspec_foldclose = 'all'   " closes folds automatically when the cursor is moved out of them (only applies to folds deeper than 'foldlevel')
+let g:fold_rspec_foldminlines = 3    " disables closing of folds containing two lines or fewer
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SWITCH BETWEEN TEST AND PRODUCTION CODE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! OpenTestAlternate()
+  let new_file = AlternateForCurrentFile()
+  exec ':e ' . new_file
+endfunction
+function! AlternateForCurrentFile()
+  let current_file = expand("%")
+  let new_file = current_file
+  let in_spec = match(current_file, '^spec/') != -1
+  let going_to_spec = !in_spec
+  let in_app = match(current_file, '\<controllers\>') != -1 || match(current_file, '\<models\>') != -1 || match(current_file, '\<views\>') != -1 || match(current_file, '\<helpers\>') != -1
+  if going_to_spec
+    if in_app
+      let new_file = substitute(new_file, '^app/', '', '')
+    end
+    let new_file = substitute(new_file, '\.e\?rb$', '_spec.rb', '')
+    let new_file = 'spec/' . new_file
+  else
+    let new_file = substitute(new_file, '_spec\.rb$', '.rb', '')
+    let new_file = substitute(new_file, '^spec/', '', '')
+    if in_app
+      let new_file = 'app/' . new_file
+    end
+  endif
+  return new_file
+endfunction
+nnoremap <leader>. :call OpenTestAlternate()<cr>
+
+
+" Markdow / Pandoc
+"""""""""""""""""""
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.apib set filetype=markdown
+autocmd BufNewFile,BufRead *.rmd set filetype=markdown
+
+" Airline
+"""""""""
+set laststatus=2               " tell VIM to always put a status line in, even if there is only one window
+
+
+" NERDTREE
+""""""""""
+" Open NerdTree always when no files are open
+let NERDTreeShowFiles=1         " Show hidden files
+let NERDTreeQuitOnOpen=0        " Don't quit nerdtree when opening a file
+"let g:NERDTreeDirArrows=0        " Open directories with enter
+set splitright                  " Show file drawer left
+let g:NERDTreeChDirMode       = 2 "Needed for ctrlp
+let g:NERDTreeWinSize=60
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['node_modules', '\.pyc$', 'Icon\?', '\.aux$', '\.fdb_latexmk$', '\.fls$', '\.synctex.gz$', '\.docx$', '\.pdf$', '\.blg$', '\.bbl$', '\.Rd$', '\.RData$']
+
+" Netrw
+""""""""
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_liststyle = 3
+"let g:netrw_winsize = 20
+let g:netrw_list_hide = netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' 
+autocmd FileType netrw setlocal bufhidden=delete
+"map <C-n> :Lexplore<CR>
+
+" Ranger
+""""""""
+"map <C-n>f :Ranger<CR>
+
+" TMUX
+""""""
+" Needed for tmux and vim to play nice
+map <Esc>[A <Up>
+map <Esc>[B <Down>
+map <Esc>[C <Right>
+map <Esc>[D <Left>
+
+cmap <Esc>[A <Up>
+cmap <Esc>[B <Down>
+cmap <Esc>[C <Right>
+cmap <Esc>[D <Left>
+
+" LaTeX
+"""""""
+" Vim-latex / latex suite
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+" set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+"let g:tex_flavor='latex'
+"let g:Tex_DefaultTargetFormat='pdf'
+"let g:Tex_CompileRule_pdf = 'latexmk -pdf -synctex=1 -interaction=nonstopmode -silent -f $*'
+"let g:Tex_ViewRule_pdf = 'open -a Skim'
+
+"Latex Box
+"let g:LatexBox_latexmk_async=1
+"let g:LatexBox_build_dir='build'
+"let g:LatexBox_latexmk_preview_continuously=1
+"let g:LatexBox_quickfix=2
+"let g:LatexBox_latexmk_options
+"\ = "-pdflatex='pdflatex -synctex=1 \%O \%S'"
+
+"map <silent> <Leader>ls :silent
+"\ !/Applications/Skim.app/Contents/SharedSupport/displayline
+"\ <C-R>=line('.')<CR> "<C-R>=LatexBox_GetOutputFile()<CR>"
+"\ "%:p" <CR>
+"
+autocmd BufNewFile,BufRead *.tex set filetype=tex
+
+
+" Code completion
+"""""""""""""""""
+""" Enable code completion
+"function! Auto_complete_string()
+"if pumvisible()
+"return "\<C-n>"
+"else
+"return "\<C-x>\<C-o>\<C-r>=Auto_complete_opened()\<CR>"
+"end
+"endfunction
+
+"function! Auto_complete_opened()
+"if pumvisible()
+"return "\<Down>"
+"end
+"return ""
+"endfunction
+
+" Remap autocompletion key
+"inoremap <C-Space> <C-n>
+
+"inoremap <expr> <C-Space> Auto_complete_string()
+
+" General mappings
+""""""""""""""""""
+" Color a line at column 80
+"set colorcolumn=80
+"highlight ColorColumn ctermbg=17 guibg=lightgrey
+"autocmd FileType markdown,latex,vimrc set colorcolumn=
+
+nnoremap ; :
+" List the contents of the registers
+map <Leader>p :registers<cr>
+
+" quit with ctrl-w
+"noremap <C-Q> :wq<CR>
+"vnoremap <C-Q> :wqxe<CR>
+"inoremap <C-Q> <C-O>:update<CR>
+
+" Aufotmatically create / open / close folds with space
+"nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Tab>")<CR>
+vnoremap <Tab> zf
+
+" Bind cTRL+movement to move around the windows
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" Just use gt and gT instead of these bindings
+"map <Leader>n <esc>:tabprevious<CR>
+"map <Leader>m <esc>:tabnext<CR>
+
+" Duplicate selected text
+map <Leader>d "dyy"dp
+vnoremap <Leader>d "dy"dP
+"
+" Thesaurus
+nnoremap <LocalLeader>k :OnlineThesaurusCurrentWord<CR>
+
+" Latex gls
+autocmd! FileType tex map <Leader>b bi\textbf{<esc>Ea}<esc>
+autocmd! FileType tex map <Leader>i bi\emph{<esc>Ea}<esc>
+
+" Show gutter, even if there is nothing there
+" From: https://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
+autocmd BufEnter * sign define dummy
+autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+
+" Unmap the arrowkeys for navigation
+"inoremap  <Up>     <NOP>
+"inoremap  <Down>   <NOP>
+"inoremap  <Left>   <NOP>
+"inoremap  <Right>  <NOP>
+"noremap   <Up>     <NOP>
+"noremap   <Down>   <NOP>
+"noremap   <Left>   <NOP>
+"noremap   <Right>  <NOP>
+
+" Jump to the end of the sentence in insert mode with c-e
+inoremap <C-e> <C-o>A
+
+" Easier indenting code blocks
+vnoremap < <gv
+vnoremap > >gv
+
+" Move visualblocks around
+vnoremap K xkP`[V`]
+vnoremap U xp`[V`]
+vnoremap L >gv
+vnoremap H <gv
+
+" Better navigation in wrapped lines
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
+" Hotkey to remove highlight
+noremap <Leader>/ :noh<CR>
+
+" Increase / decrease size of split
+nnoremap <silent> <Leader>= :exe "vertical resize +10"<CR>
+nnoremap <silent> <Leader>- :exe "vertical resize -10"<CR>
+
+" Speed up scrolling of the viewport slightly
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 3<C-y>
+
+" Search replace word under cursor
+nnoremap <Leader>r mu:%s/\<<C-r><C-w>\>//g <bar> 'u <Left><Left><Left><Left><Left><Left><Left><Left>
+
+" Indenting files
+"noremap <Leader>] :Autoformat<CR>
+
+" Remove whitespace
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+"autocmd BufWrite *.py :call DeleteTrailingWS()
+"map <Leader>k mu:%s/[ ]*$//g<cr>:noh<cr>`u
+map <Leader>k :call DeleteTrailingWS()<cr>
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" " which is the default
+map Y y$
+
+" sudo to write
+cmap w!! w !sudo tee % >/dev/null
+
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! Diff call s:DiffWithSaved()
+
+
+" Only use number for now, as for some reason the relative number is really
+" slow!
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+
+if g:os == "Darwin"
+  set number
+elseif g:os == "Linux"
+  set relativenumber
+
+  au FocusLost * :set number
+  au FocusGained * :set relativenumber
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
+elseif g:os == "Windows"
+  " nothing
+endif
+
+
+" The Silver Searcher
+"""""""""""""""""""""
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap <Leader>\ :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" bind \ (backward slash) to grep shortcut
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+" The leader is now ,, use \ for searching as well
+nnoremap <Leader>\ :Ag -i<SPACE>
+autocmd! FileType qf nnoremap <buffer> <C-v> <C-w><Enter><C-w>L
+
+" Highlighting / syntax
+"""""""""""""""""""""""
+" Enable syntax highlighting
+syntax enable
+set synmaxcol=1024 "only for x number of chars
+autocmd FileType tex set synmaxcol=2048
+" Set the correct color scheme
+set background=dark
+
+if has('gui_running')
+  " GUI colors
+  colorscheme twilight
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    set guifont=Menlo
+  endif
+else
+  " Non-GUI (terminal) colors
+  let g:solarized_termcolors=256
+  colorscheme twilight256
+  if exists('$TMUX')
+    "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+    "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  else
+    "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+  endif
+
+endif
+
+"if &diff
+"highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+"highlight DiffDelete cterm=bold ctermfg=88 ctermbg=17 gui=none guifg=bg guibg=Red
+"highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+"highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+hi DiffAdd          ctermbg=235  ctermfg=108  guibg=#262626 guifg=#87af87 cterm=reverse        gui=reverse
+hi DiffChange       ctermbg=235  ctermfg=103  guibg=#262626 guifg=#8787af cterm=reverse        gui=reverse
+hi DiffDelete       ctermbg=235  ctermfg=131  guibg=#262626 guifg=#af5f5f cterm=reverse        gui=reverse
+hi DiffText         ctermbg=235  ctermfg=208  guibg=#262626 guifg=#ff8700 cterm=reverse        gui=reverse
+"end
+
+" started In Diff-Mode set diffexpr (plugin not loaded yet)
+if &diff
+  let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=histogram")'
+endif
+
+"Show long lines
+" /\%81v.\+
+
+" Set colormap for popups (e.g. autocompletion)
+highlight Pmenu ctermfg=70 ctermbg=235
+set omnifunc=syntaxcomplete#Complete
+highlight CursorLine guibg=#303000 ctermbg=234
+
+" Red line on 80
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%81v.\+/
+
+" General textediting
+"""""""""""""""""""""
+" spell checking for certain files
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile markdown setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.tex setlocal spell spelllang=en_us
+autocmd FileType *.tex setlocal spell spelllang=en_us
+
+" Set colors for spellcheck
+hi SpellBad cterm=underline ctermfg=202 ctermbg=none
+hi SpellLocal cterm=underline ctermfg=51 ctermbg=none
+hi SpellCap cterm=underline ctermfg=33 ctermbg=none
+
+" set colors for visual selection
+"hi Visual term=reverse cterm=reverse ctermfg=251 ctermbg=236 gui=reverse guifg=#111111 guibg=#777777
+" Text wrapping
+autocmd BufNewFile,BufRead *.txt set wrap
+autocmd BufNewFile,BufRead tex set wrap
+autocmd BufNewFile,BufRead *.tex set wrap
+autocmd BufNewFile,BufRead markdown set wrap
+autocmd BufNewFile,BufRead *.md set wrap
+
+" Run current file
+autocmd FileType octave noremap <Leader>ll ggOpkg load all<esc>Gopause<esc>:w<cr>:!octave -qf %<cr>ddggdd:w<cr>
+autocmd FileType markdown noremap <Leader>ll :Pandoc pdf<cr>
+autocmd FileType ruby noremap <leader>ll :!ruby %<cr>
+autocmd FileType sh noremap <leader>ll :!bash %<cr>

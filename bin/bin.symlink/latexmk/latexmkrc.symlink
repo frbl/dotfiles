@@ -1,0 +1,29 @@
+$recorder = 1;
+$pdf_mode = 1;
+$ooooooooooooooout_dir = 'build';
+$bibtex_use = 2;
+$pdflatex = "pdflatex --synctex=1 --shell-escape %O %S";
+
+$pdf_previewer = 'osascript -e "set theFile to POSIX file \"%S\" as alias" -e "set thePath to POSIX path of theFile" -e "tell application \"Skim\"" -e "open theFile" -e "end     tell"';
+$pdf_update_method = 0;
+$pdf_update_command = '/usr/bin/osascript -e "set theFile to POSIX file \"%S\" as alias" -e "set thePath to POSIX path of theFile" -e "tell application \"Skim\"" -e  "  set theDocs to get documents whose path is thePath" -e "  try" -e "    if (count of theDocs) > 0 then revert theDocs" -e "  end try" -e "  open theFile" -e "end tell"';
+
+$latex = 'latex --shell-escape';
+
+add_cus_dep('glo', 'gls', 0, 'run_makeglossaries');
+add_cus_dep('acn', 'acr', 0, 'run_makeglossaries');
+
+# added for using glossaries
+sub run_makeglossaries {
+  system("makeindex -s '$_[0]'.ist -t '$_[0]'.glg -o '$_[0]'.gls '$_[0]'.glo");
+  if ( $silent ) {
+    system "makeglossaries -q '$_[0]'";
+  }
+  else {
+    system "makeglossaries '$_[0]'";
+  };
+}
+
+push @generated_exts, 'glo', 'gls', 'glg';
+push @generated_exts, 'acn', 'acr', 'alg';
+$clean_ext .= ' %R.ist %R.xdy';
