@@ -198,11 +198,13 @@ highlight clear ALEWarningSign
 let b:ale_sign_error = '!'
 let b:ale_sign_warning = '.'
 let b:ale_linters = {
-\   'javascript': ['standard']
+\   'javascript': ['standard'],
+\   'typescript': ['tslint']
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['standard'],
+\   'typescript': ['tslint'],
 \   'html': ['prettier'],
 \   'json': ['jq'],
 \   'python':  ['yapf'],
