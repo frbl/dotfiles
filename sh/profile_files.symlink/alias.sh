@@ -261,8 +261,8 @@ alias heroku-rs='heroku ps:restart worker.1 -a differentiatie-production; heroku
 
 hnkscreen() {
   xrandr --newmode "3440x1440_75.00"  533.87  3440 3712 4088 4736  1440 1441 1444 1503  -HSync +Vsync
-  xrandr --addmode HDMI-1 "3440x1440_75.00"
-  xrandr --output HDMI-1 --mode "3440x1440_75.00"
+  xrandr --addmode DP-1 "3440x1440_75.00"
+  xrandr --output DP-1 --mode "3440x1440_75.00"
 }
 
 tripled() {
