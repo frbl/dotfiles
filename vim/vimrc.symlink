@@ -10,10 +10,6 @@ if has('python3')
   silent! python3 1
 endif
 
-set omnifunc=syntaxcomplete#Complete
-" if hidden is not set, TextEdit might fail. (set for coc)
-set hidden
-
 "Set wildignores
 set wildignore+=*.swp,*.zip,*.exe,*.class,*.jar,*/tmp/*,*.so
 
@@ -58,8 +54,6 @@ set lazyredraw                  " to avoid scrolling problems
 "set foldmethod=indent           " fold based on syntax
 "set cursorline                  " show a line under the cursor
 set ttymouse=sgr
-
-set updatetime=300
 
 if !exists("g:os")
   if has("win64") || has("win32") || has("win16")
@@ -154,7 +148,7 @@ endif
 Plug 'junegunn/fzf.vim'
 
 " Ctag support
-"Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " git integration
 Plug 'tpope/vim-fugitive'
@@ -165,19 +159,6 @@ Plug 'tpope/vim-surround'
 
 " Live syntax checking and linting
 Plug 'w0rp/ale'
-
-" Completion
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-let g:deoplete#enable_at_startup = 1
 
 " Easy use of the system clipboard
 Plug 'christoomey/vim-system-copy'
@@ -232,47 +213,22 @@ let g:ale_fixers = {
 
 noremap <Leader>] :ALEFix<CR>
 
-" LanguageServer
-""""""""""""""""
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-
-" Minimal LSP configuration for JavaScript
-
-let g:LanguageClient_serverCommands = {
-        \ 'javascript': ['javascript-typescript-stdio'],
-        \ 'typescript': ['javascript-typescript-stdio']
-\}
-let g:LanguageClient_diagnosticsEnable = 0
-set completefunc=LanguageClient#complete
-autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
-autocmd FileType typescript setlocal omnifunc=LanguageClient#complete
-
-" <leader>g to go to definition
-nnoremap <leader>g :call LanguageClient_textDocument_definition()<cr>
-" <leader>K for type info under cursor
-nnoremap K :call LanguageClient_textDocument_hover()<cr>
-" <leader>r to rename variable under cursor
-nnoremap <leader>r :call LanguageClient_textDocument_rename()<cr>
-nnoremap <leader>lf :call LanguageClient_textDocument_documentSymbol()<cr>
-inoremap <C-@> <c-x><c-o>
-
 "  Easy align
 """"""""
 xmap ga <Plug>(EasyAlign)
 
 " Tagbar
 """"""""
-"nmap <leader>b :TagbarToggle<CR>
-"" R functionality
-"let g:tagbar_type_r = {
-"\   'ctagstype' : 'r',
-"\   'kinds'     : [
-"\     'f:Functions',
-"\     'g:GlobalVariables',
-"\     'v:FunctionVariables',
-"\   ]
-"\ }
+nmap <leader>b :TagbarToggle<CR>
+" R functionality
+let g:tagbar_type_r = {
+\   'ctagstype' : 'r',
+\   'kinds'     : [
+\     'f:Functions',
+\     'g:GlobalVariables',
+\     'v:FunctionVariables',
+\   ]
+\ }
 
 " Snipmate / Ultisnips
 """"""""""""""""""""""
@@ -531,6 +487,12 @@ inoremap <C-e> <C-o>A
 vnoremap < <gv
 vnoremap > >gv
 
+" Move visualblocks around
+vnoremap K xkP`[V`]
+vnoremap U xp`[V`]
+vnoremap L >gv
+vnoremap H <gv
+
 " Better navigation in wrapped lines
 noremap j gj
 noremap k gk
@@ -549,7 +511,7 @@ nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 3<C-y>
 
 " Search replace word under cursor
-"nnoremap <Leader>r mu:%s/\<<C-r><C-w>\>//g <bar> 'u <Left><Left><Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>r mu:%s/\<<C-r><C-w>\>//g <bar> 'u <Left><Left><Left><Left><Left><Left><Left><Left>
 
 " Indenting files
 "noremap <Leader>] :Autoformat<CR>
@@ -618,6 +580,9 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" bind K to grep word under cursor
+nnoremap <Leader>\ :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
