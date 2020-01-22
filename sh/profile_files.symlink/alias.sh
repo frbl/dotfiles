@@ -259,6 +259,12 @@ echo "$fg[blue] > $reset_color Finished aliasses"
 
 alias heroku-rs='heroku ps:restart worker.1 -a differentiatie-production; heroku ps:restart web.1 -a differentiatie-production'
 
+hnkscreen() {
+  xrandr --newmode "3440x1440_75.00"  533.87  3440 3712 4088 4736  1440 1441 1444 1503  -HSync +Vsync
+  xrandr --addmode DP-1 "3440x1440_75.00"
+  xrandr --output DP-1 --mode "3440x1440_75.00"
+}
+
 tripled() {
   xrandr --output HDMI-1 --auto
   xrandr --output VGA-1 --auto
@@ -273,6 +279,17 @@ duald() {
   xrandr --output HDMI-1 --auto
   xrandr --output LVDS-1 --auto
   xrandr --output HDMI-1 --left-of LVDS-1
+}
+
+dualdrighthnk() {
+  xrandr --output VGA-1 --off
+  xrandr --output HDMI-1 --auto
+  xrandr --output DP-1 --auto
+  xrandr --output LVDS-1 --auto
+  xrandr --output eDP-1 --auto
+  xrandr --output HDMI-1 --right-of LVDS-1
+  xrandr --output HDMI-1 --right-of eDP-1
+  xrandr --output DP-1 --right-of eDP-1
 }
 
 dualdright() {
