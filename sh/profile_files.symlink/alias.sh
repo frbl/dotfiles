@@ -312,7 +312,9 @@ dualdvga() {
   xrandr --output HDMI-1 --off
   xrandr --output VGA-1 --auto
   xrandr --output LVDS-1 --auto
+  xrandr --output eDP-1 --auto
   xrandr --output VGA-1 --right-of LVDS-1
+  xrandr --output VGA-1 --right-of eDP-1
 }
 
 singled() {

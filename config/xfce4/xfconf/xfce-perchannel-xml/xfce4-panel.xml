@@ -47,7 +47,9 @@
     <property name="plugin-5" type="string" value="clock"/>
     <property name="plugin-6" type="string" value="systray">
       <property name="names-visible" type="array">
+        <value type="string" value="owncloud"/>
         <value type="string" value="networkmanager applet"/>
+        <value type="string" value="insync"/>
         <value type="string" value="wicd-client.py"/>
       </property>
     </property>
