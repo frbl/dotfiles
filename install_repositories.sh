@@ -89,6 +89,7 @@ github_clone "compsy" "yourspecialforces-public"
 github_clone "rug-wacc" "teachers-2018"
 
 github_clone "rug-sc" "teachers-2017"
+github_clone "rug-sc" "teachers"
 
 github_clone "rug-ds-lab" "planning-dynamic-spark"
 github_clone "rug-ds-lab" "ecida-main"
