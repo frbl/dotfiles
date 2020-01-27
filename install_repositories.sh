@@ -88,6 +88,8 @@ github_clone "compsy" "yourspecialforces-public"
 
 github_clone "rug-wacc" "teachers-2018"
 
+github_clone "rug-sc" "teachers-2017"
+
 github_clone "rug-ds-lab" "planning-dynamic-spark"
 github_clone "rug-ds-lab" "ecida-main"
 github_clone "rug-ds-lab" "2018_Pratama_Low-intrusive-Power-Consumption-based-Occupancy-Detection-in-Office-Environment"
