@@ -176,6 +176,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-solargraph', {'do': 'gem install solargraph'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-r-lsp', {'do': 'yarn install --frozen-lockfile'}
 " End coc.nvim plugins
 
 " Easy use of the system clipboard
