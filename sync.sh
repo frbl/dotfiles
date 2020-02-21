@@ -4,6 +4,7 @@ git pull
 
 CACHE_LOCATION="$HOME/.cache/dotfiles"
 cp -r $CACHE_LOCATION/* .
+git pull
 git status
 
 git add --all
