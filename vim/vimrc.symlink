@@ -404,9 +404,9 @@ xmap ga <Plug>(EasyAlign)
 
 " Snipmate / Ultisnips
 """"""""""""""""""""""
-let g:UltiSnipsExpandTrigger=",,"
-let g:UltiSnipsJumpForwardTrigger = ",,"
-let g:UltiSnipsJumpBackwardTrigger = ",,"
+let g:UltiSnipsExpandTrigger=",m"
+let g:UltiSnipsJumpForwardTrigger = ",m"
+let g:UltiSnipsJumpBackwardTrigger = ",m"
 "
 let g:UltiSnipsSnippetDirectories = ['/Users/frbl/.snippets/vim/UltiSnips']
 au FileType javascript :UltiSnipsAddFiletypes javascript

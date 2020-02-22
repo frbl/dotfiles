@@ -13,23 +13,6 @@ alias dus='du -sh -d1 * | gsort -h'
 function encrypt { gpg --output $1.gpg --encrypt --recipient 743F90E1 $1; }
 function decrypt { gpg --decrypt $1;}
 
-function gstt {
-  for dir in */     # list directories in the form "/tmp/dirname/"
-  do
-    dir=${dir%*/}      # remove the trailing "/"
-    if [[ $dir != '.' ]]; then
-      cd ${dir}    # print everything after the final "/"
-      if [ -n "$(git status --porcelain)" ]; then
-        echo '================================='
-        echo $dir
-        echo '================================='
-        git status
-      fi
-      cd ..
-    fi
-  done
-}
-
 us() {
   setxkbmap us
 }
@@ -301,7 +284,7 @@ duald() {
   xrandr --output VGA-1 --off
   xrandr --output HDMI-1 --auto
   xrandr --output LVDS-1 --auto
-  xrandr --output HDMI-1 --left-of LVDS-1
+  xrandr --output HDMI-1 --right-of LVDS-1
 }
 
 dualdrighthnk() {
