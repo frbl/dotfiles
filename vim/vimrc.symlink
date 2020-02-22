@@ -163,7 +163,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 
 " Live syntax checking and linting
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -177,6 +177,7 @@ Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-solargraph', {'do': 'gem install solargraph'}
 Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-r-lsp', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 " End coc.nvim plugins
 
 " Easy use of the system clipboard
@@ -210,32 +211,34 @@ call plug#end() " required
 
 " w0rp/ale
 """"""""""
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-highlight clear ALEWarningSign
-let b:ale_sign_error = '!'
-let b:ale_sign_warning = '.'
-let b:ale_linters = {
-\   'javascript': ['standard'],
-\   'typescript': ['tslint']
-\}
+"let g:ale_echo_msg_error_str = 'E'
+"let g:ale_echo_msg_warning_str = 'W'
+"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"highlight clear ALEWarningSign
+"let b:ale_sign_error = '!'
+"let b:ale_sign_warning = '.'
+"let b:ale_linters = {
+"\   'javascript': ['standard'],
+"\   'typescript': ['tslint']
+"\}
 
-let g:ale_fixers = {
-\   'javascript': ['standard'],
-\   'typescript': ['prettier', 'tslint'],
-\   'html': ['prettier'],
-\   'json': ['jq'],
-\   'python':  ['yapf'],
-\   'ruby':  ['rubocop'],
-\   'sh': ['shfmt'],
-\   'tex': ['latexindent']
-\}
+"let g:ale_fixers = {
+"\   'javascript': ['standard'],
+"\   'typescript': ['prettier', 'tslint'],
+"\   'html': ['prettier'],
+"\   'json': ['jq'],
+"\   'python':  ['yapf'],
+"\   'ruby':  ['rubocop'],
+"\   'sh': ['shfmt'],
+"\   'tex': ['latexindent']
+"\}
 
-noremap <Leader>] :ALEFix<CR>
+"noremap <Leader>] :ALEFix<CR>
 
 " coc.nvim
 """"""""""
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+noremap <Leader>] :Prettier<CR>
 " Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup

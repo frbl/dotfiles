@@ -6,5 +6,6 @@ search zip
 open_with jh:q
 rename sdv
 rename planningvariables
-delete
 find fgg
+search icon
+delete
