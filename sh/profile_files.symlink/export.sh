@@ -71,7 +71,6 @@ export GOPATH="/Users/frbl/Workspace"
 # export SSL_CERT_FILE=/Users/$USER/Workspace/$USER/cacert.pem
 # Path
 export PATH="/usr/local/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin/jupyter-notebook"
 export PATH="$PATH:$HOME/.bin"
 export PATH="$PATH:/usr/bin"
 export PATH="$PATH:/bin"

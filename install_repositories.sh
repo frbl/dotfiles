@@ -116,12 +116,12 @@ gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-integrations"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-questionnaires"
 gitlab_clone "researchable/sport-data-valley/MVP" "jupyterhub"
 
-gitlab_clone "sport-data-valley" "poc-data"
+#gitlab_clone "sport-data-valley" "poc-data"
 
 # i-shared
 #gitlab_clone "researchable/samen-sturen" "svc-visualization-r"
-#gitlab_clone "researchable/samen-sturen" "svc-visualization-js"
 gitlab_clone "researchable/samen-sturen" "svc-pdfgenerator"
+gitlab_clone "researchable/samen-sturen" "svc-visualization-js"
 gitlab_clone "researchable/samen-sturen" "svc-prediction"
 gitlab_clone "researchable/samen-sturen" "composer"
 gitlab_clone "researchable/samen-sturen" "infrastructure"
@@ -131,7 +131,6 @@ roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "prediction-model-r-raw" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-prediction-r" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-visualization-r" "researchable/samen-sturen"
-roqua_clone "ishared" "svc-visualization-js" "researchable/samen-sturen"
 
 roqua_clone "roqua" "roqua" "roqua"
 
