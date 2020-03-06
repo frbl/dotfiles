@@ -118,6 +118,7 @@ alias java11='export JAVA_HOME=$JAVA_11_HOME'
 
 #default java8
 export JAVA_HOME=$JAVA_8_HOME
+alias change_java='sudo update-alternatives --config java'
 
 if [ -e "/tmp/a2m" ]; then
   #cat "/tmp/a2m"
