@@ -24,6 +24,7 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ScrollingLines=1048576
 ColorForeground=#dcdcdc
 ColorBackground=#2c2c2c
 ColorCursor=#dcdcdc
@@ -33,4 +34,3 @@ MiscShowRelaunchDialog=TRUE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=TRUE
-

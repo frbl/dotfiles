@@ -133,6 +133,7 @@ roqua_clone "ishared" "svc-prediction-r" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-visualization-r" "researchable/samen-sturen"
 
 roqua_clone "roqua" "roqua" "roqua"
+roqua_clone "roqua" "roqua" "questionnaires"
 
 #gitlab_clone "roqua" "autovar"
 

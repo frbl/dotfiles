@@ -291,9 +291,11 @@ pronkridderscreen() {
 tripled() {
   xrandr --output HDMI-1 --auto
   xrandr --output VGA-1 --auto
+  xrandr --output DP-1 --auto
   xrandr --output LVDS-1 --auto
   xrandr --output HDMI-1 --right-of LVDS-1
   xrandr --output VGA-1 --right-of HDMI-1
+  xrandr --output HDMI-1 --right-of eDP-1
   #xrandr --output HDMI-1 --left-of VGA-1
 }
 
