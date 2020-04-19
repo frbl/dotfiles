@@ -57,6 +57,7 @@ roqua_clone() {
 
 
 
+github_clone "frbl" "notes"
 github_clone "frbl" "frbl.github.io-private"
 github_clone "frbl" "dotfiles-private"
 github_clone "frbl" "dotfiles"
