@@ -1,8 +1,8 @@
-delay=2
+delay=1
 region=3
 action=1
 show_mouse=1
 screenshot_dir=file:/home/frbl/Pictures
-app=/usr/lib/firefox-esr/firefox-esr
+app=ristretto
 last_user=
 
