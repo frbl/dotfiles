@@ -9,3 +9,7 @@ rename planningvariables
 find fgg
 search icon
 delete
+open_with 
+
+touch QuestionnaireDashboard.jsx
+bulkrename 
