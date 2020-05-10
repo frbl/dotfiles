@@ -1,7 +1,7 @@
 delay=5
-region=3
+region=2
 action=1
-show_mouse=1
+show_mouse=0
 screenshot_dir=file:/home/frbl/Pictures
 app=/usr/lib/firefox-esr/firefox-esr
 last_user=
