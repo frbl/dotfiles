@@ -122,7 +122,6 @@ gitlab_clone "researchable/sport-data-valley/MVP" "jupyterhub"
 
 # i-shared
 #gitlab_clone "researchable/samen-sturen" "svc-visualization-r"
-gitlab_clone "researchable/samen-sturen" "clustering-model-r"
 gitlab_clone "researchable/samen-sturen" "svc-pdfgenerator"
 gitlab_clone "researchable/samen-sturen" "svc-visualization-js"
 gitlab_clone "researchable/samen-sturen" "svc-prediction"
@@ -131,6 +130,7 @@ gitlab_clone "researchable/samen-sturen" "infrastructure"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 
+roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
 roqua_clone "ishared" "prediction-model-r-raw" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-prediction-r" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-visualization-r" "researchable/samen-sturen"
