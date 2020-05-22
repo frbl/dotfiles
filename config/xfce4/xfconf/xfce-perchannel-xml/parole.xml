@@ -5,11 +5,11 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/frbl/Videos"/>
+    <property name="last-used-media" type="string" value="/home/frbl/Downloads"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
-    <property name="width" type="int" value="615"/>
+    <property name="width" type="int" value="630"/>
     <property name="height" type="int" value="1040"/>
   </property>
   <property name="audio" type="empty">
