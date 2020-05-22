@@ -20,19 +20,24 @@ it('it should $1', () => {
 endsnippet
 
 snippet react "react"
-import React, { useEffect, useState, useMemo } from 'react'
+import React from 'react';
+import axios from 'axios';
 
-const $1 = (props) => {
-  useEffect(() => {
-	  // Use effect function
-  }, [])
+import {
+  withRouter
+} from 'react-router-dom';
 
-  return (
-    <div className='row'>
-		  Test
-    </div>
-  )
+class $1 extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div />
+    );
+  }
 }
 
-export default $1
+export default withRouter($1);
 endsnippet
