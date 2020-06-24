@@ -214,18 +214,31 @@ call plug#end() " required
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_completion_enabled = 1
+
+"When working with TypeScript files, ALE supports automatic imports from
+"external modules. This behavior is disabled by default and can be enabled by
+"setting:
+let g:ale_completion_tsserver_autoimport = 1
+
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
 highlight clear ALEWarningSign
-let b:ale_sign_error = '!'
-let b:ale_sign_warning = '.'
-let b:ale_linters = {
-\   'javascript': ['standard'],
-\   'typescript': ['tslint']
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '.'
+let g:ale_linters = {}
+"\   'javascript': ['standard'],
+let g:ale_linters = {
+\   'javascript': [],
+\   'ruby': ['rubocop'],
+\   'typescript': ['tsserver', 'eslint'],
 \}
 
+let g:ale_fixers = {}
 let g:ale_fixers = {
 \   'r': ['styler'],
 \   'javascript': ['standard'],
-\   'typescript': ['prettier', 'tslint'],
+\   'typescript': ['eslint', 'prettier'],
 \   'html': ['prettier'],
 \   'json': ['jq'],
 \   'python':  ['yapf'],
@@ -235,6 +248,11 @@ let g:ale_fixers = {
 \}
 
 noremap <Leader>] :ALEFix<CR>
+nmap <leader>gd  :ALEGoToDefinition<CR>
+nmap <leader>gh  :ALEHover<CR>
+
+" Cycle through suggestions with tab and shifttab
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " coc.nvim
 """"""""""
@@ -409,8 +427,8 @@ xmap ga <Plug>(EasyAlign)
 " Snipmate / Ultisnips
 """"""""""""""""""""""
 let g:UltiSnipsExpandTrigger=",,"
-let g:UltiSnipsJumpForwardTrigger = ",,"
-let g:UltiSnipsJumpBackwardTrigger = ",,"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "
 let g:UltiSnipsSnippetDirectories = ['/Users/frbl/.snippets/vim/UltiSnips']
 au FileType javascript :UltiSnipsAddFiletypes javascript

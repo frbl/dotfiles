@@ -8,7 +8,7 @@ debugger;
 endsnippet
 
 snippet desc "describe"
-describe('$1', async () => {
+describe('$1', () => {
   $2
 });
 endsnippet
@@ -40,4 +40,12 @@ class $1 extends React.Component {
 }
 
 export default withRouter($1);
+endsnippet
+
+snippet post "post"
+@Post('/webhook/$1')
+@HttpCode(204)
+async process${1/\w+\s*/\u$0/g} (@Body() _$1?: Garmin${1/\w+\s*/\u$0/g}Dto[]): Promise<unknown> {
+	return 'Not yet used'
+}
 endsnippet
