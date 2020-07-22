@@ -127,6 +127,10 @@ Plug 'scrooloose/nerdtree'
 " Nerdcommenter for bettercommenting
 Plug 'scrooloose/nerdcommenter'
 
+" Commenting functions and stuff
+Plug 'kkoomen/vim-doge'
+
+
 " Status line
 Plug 'itchyny/lightline.vim'
 
@@ -229,6 +233,10 @@ call plug#end() " required
 "" Cycle through suggestions with tab and shifttab
 "inoremap <silent><expr> <tab> pumvisible() ? "\<C-n>" : "\<tab>"
 "inoremap <silent><expr> <s-tab> pumvisible() ? "\<C-p>" : "\<s-tab>"
+
+" doge
+""""""
+let g:doge_mapping = '<leader>cc'
 
 " coc.nvim
 """"""""""

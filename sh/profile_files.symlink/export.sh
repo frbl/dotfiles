@@ -4,6 +4,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   defaults write NSGlobalDomain InitialKeyRepeat -int 15
   defaults write -g NSDragAndDropTextDelay -int 100
 fi
+export BROWSER='/usr/bin/chromium'
 
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
