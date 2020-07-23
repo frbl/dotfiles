@@ -54,13 +54,16 @@ set ttyfast                                  " use fast terminal
 set lazyredraw                               " to avoid scrolling problems
 "set foldmethod=indent                       " fold based on syntax
 "set cursorline                              " show a line under the cursor
-set ttymouse=sgr
+if !has('nvim')
+  set ttymouse=xterm2
+"set ttymouse=sgr
+endif
 
 set updatetime=300
 
 " Window resizing
-silent! set winheight=40
-silent! set winminheight=5
+"silent! set winheight=40
+"silent! set winminheight=5
 silent! set winwidth=100
 silent! set winminwidth=20
 
@@ -152,18 +155,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 
 " Live syntax checking and linting
-"Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Start coc.nvim plugins
-"Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-solargraph', {'do': 'gem install solargraph'}
-"Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-r-lsp', {'do': 'yarn install --frozen-lockfile'}
-"Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-" End coc.nvim plugins
 
 " Easy use of the system clipboard
 Plug 'christoomey/vim-system-copy'
@@ -195,37 +190,37 @@ call plug#end() " required
 
 " w0rp/ale
 """"""""""
-"let g:ale_echo_msg_error_str = 'E'
-"let g:ale_echo_msg_warning_str = 'W'
-"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-"let g:ale_completion_enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_completion_enabled = 1
 
-""When working with TypeScript files, ALE supports automatic imports from
-""external modules. This behavior is disabled by default and can be enabled by
-""setting:
-"let g:ale_completion_tsserver_autoimport = 1
+"When working with TypeScript files, ALE supports automatic imports from
+"external modules. This behavior is disabled by default and can be enabled by
+"setting:
+let g:ale_completion_tsserver_autoimport = 1
 
-"let g:ale_lint_on_save = 0
-"let g:ale_fix_on_save = 0
-"highlight clear ALEWarningSign
-"let g:ale_sign_error = '!'
-"let g:ale_sign_warning = '.'
-"let g:ale_linters = {
-"\   'javascript': ['standard'],
-"\   'typescript': ['tsserver', 'eslint']
-"\}
+let g:ale_lint_on_save = 0
+let g:ale_fix_on_save = 0
+highlight clear ALEWarningSign
+let g:ale_sign_error = '!'
+let g:ale_sign_warning = '.'
+let g:ale_linters = {
+\   'javascript': ['standard'],
+\   'typescript': ['tsserver', 'eslint']
+\}
 
-"let g:ale_fixers = {
-"\   'r': ['styler'],
-"\   'javascript': ['standard'],
-"\   'typescript': ['prettier', 'tslint'],
-"\   'html': ['prettier'],
-"\   'json': ['jq'],
-"\   'python':  ['yapf'],
-"\   'ruby':  ['rubocop'],
-"\   'sh': ['shfmt'],
-"\   'tex': ['latexindent']
-"\}
+let g:ale_fixers = {
+\   'r': ['styler'],
+\   'javascript': ['standard'],
+\   'typescript': ['prettier', 'tslint'],
+\   'html': ['prettier'],
+\   'json': ['jq'],
+\   'python':  ['yapf'],
+\   'ruby':  ['rubocop'],
+\   'sh': ['shfmt'],
+\   'tex': ['latexindent']
+\}
 
 "noremap <Leader>] :ALEFix<CR>
 "nmap <leader>gd  :ALEGoToDefinition<CR>
@@ -248,7 +243,25 @@ let g:coc_global_extensions = [
   \ 'coc-solargraph', 'coc-eslint',  'coc-tsserver',
   \ 'coc-html', 'coc-css', 'coc-yaml', 'coc-emmet',
   \ 'coc-marketplace',
+  \ 'coc-snippets',
   \ 'coc-docker', 'coc-tslint']
+
+let g:coc_user_config = {
+  \ "diagnostic.errorSign": '⚠',
+  \ "diagnostic.warningSign": '⚐',
+  \ "diagnostic.infoSign": '⚐',
+  \ "diagnostic.hintSign": '⚐',
+  \ "snippets.ultisnips.directories":
+  \ [
+  \   "~/.snippets/vim/UltiSnips",
+  \ ],
+  \ "eslint.filetypes": [
+  \     "javascript",
+  \     "javascriptreact",
+  \     "typescript",
+  \     "typescriptreact"
+  \ ]}
+
 
 noremap <Leader>] :Prettier<CR>
 
@@ -286,6 +299,11 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -303,12 +321,27 @@ xmap ga <Plug>(EasyAlign)
 
 " Snipmate / Ultisnips
 """"""""""""""""""""""
-let g:UltiSnipsExpandTrigger=",,"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-"
-let g:UltiSnipsSnippetDirectories = ['/Users/frbl/.snippets/vim/UltiSnips']
-au FileType javascript :UltiSnipsAddFiletypes javascript
+"let g:UltiSnipsExpandTrigger=",,"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+""
+"let g:UltiSnipsSnippetDirectories = ['/Users/frbl/.snippets/vim/UltiSnips']
+"au FileType javascript :UltiSnipsAddFiletypes javascript
+" Use <C-l> for trigger snippet expand.
+imap <Leader>, <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+let g:coc_snippet_next = '<tab>'
 
 " FZF
 """""
