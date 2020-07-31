@@ -117,6 +117,7 @@ gitlab_clone "researchable/sport-data-valley/MVP" "integration-tests"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-integrations"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-questionnaires"
 gitlab_clone "researchable/sport-data-valley/MVP" "jupyterhub"
+gitlab_clone "researchable/sport-data-valley/MVP" "svc-backups"
 
 #gitlab_clone "sport-data-valley" "poc-data"
 
