@@ -75,8 +75,6 @@ github_clone "frbl" "ecida-gis"
 github_clone "frbl" "thesis"
 github_clone "frbl" "WacChat"
 github_clone "frbl" "ansible"
-github_clone "frbl" "writing-tips"
-
 
 github_clone "compsy" "vsv"
 github_clone "compsy" "paper-u-can-act-baseline"
