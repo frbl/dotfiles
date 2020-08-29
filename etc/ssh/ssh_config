@@ -103,23 +103,28 @@ Host *
 Host work
   Hostname work.evionix.org
   User root
-  LocalForward 8006 localhost:8006
+  LocalForward 8006 127.0.0.1:8006
 
 Host home
   Hostname 86.89.168.179
   User frbl
   Port 1406
-  LocalForward 9001 localhost:9001
-  LocalForward 3000 localhost:3000
-  LocalForward 2000 localhost:2000
-  LocalForward 3010 localhost:3010
-  LocalForward 8080 localhost:8080
+  LocalForward 9001 127.0.0.1:9001
+  LocalForward 9902 127.0.0.1:9902
+  LocalForward 3000 127.0.0.1:3000
+  LocalForward 3001 127.0.0.1:3001
+  LocalForward 2000 127.0.0.1:2000
+  LocalForward 2010 127.0.0.1:2010
+  LocalForward 3010 127.0.0.1:3010
+  LocalForward 3035 127.0.0.1:3035
+  LocalForward 8080 127.0.0.1:8080
+  LocalForward 8000 127.0.0.1:8000
 
 Host proxmox
   ProxyCommand ssh webhost nc -w 1 work.evionix.org 22 2>/dev/null
   User frbl
-  LocalForward 8080 localhost:8080
-  LocalForward 8006 localhost:8006
+  LocalForward 8080 127.0.0.1:8080
+  LocalForward 8006 127.0.0.1:8006
 
 #Host webhost
   #Hostname webhost-ng.service.rug.nl
