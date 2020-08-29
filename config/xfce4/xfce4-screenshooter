@@ -1,8 +1,8 @@
 delay=0
 region=3
-action=8
+action=1
 show_mouse=0
-screenshot_dir=file:///home/frbl
+screenshot_dir=file:/home/frbl
 app=/usr/lib/firefox-esr/firefox-esr
 last_user=
 
