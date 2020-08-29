@@ -1,9 +1,9 @@
 echo "$fg[blue] > $reset_color Running aliasses"
 
 # neoVim ipv default vi
-#alias vi='nvim'
-alias vi='vim'
-#alias vim='nvim'
+alias vi='nvim'
+#alias vi='vim'
+alias vim='nvim'
 
 alias vimrc='vim ~/.vimrc'
 alias profile='vim ~/.profile_files'

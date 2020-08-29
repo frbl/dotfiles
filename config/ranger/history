@@ -13,7 +13,8 @@ touch
 rename meetings
 touch 200407_enablemi.md
 
-bulkrename 
 mkdir projects
 mkdir ecida
 touch 200419_webinar.md
+search rclo
+bulkrename 
