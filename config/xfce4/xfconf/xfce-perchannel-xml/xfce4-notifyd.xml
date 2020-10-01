@@ -18,6 +18,7 @@
       <value type="string" value="Signal"/>
       <value type="string" value="Skype"/>
       <value type="string" value="Slack"/>
+      <value type="string" value="Transmission"/>
       <value type="string" value="xfce4-power-manager"/>
     </property>
   </property>

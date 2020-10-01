@@ -283,10 +283,25 @@ hnkscreen() {
 }
 
 pronkridderscreen() {
-  xrandr --newmode "2560x1080_60.00"  230.76  2560 2728 3000 3440  1080 1081 1084 1118  -HSync +Vsync
-  xrandr --addmode HDMI-1 "2560x1080_60.00"
-  xrandr --output HDMI-1 --mode "2560x1080_60.00"
+  xrandr --newmode "5120x1440_120R"  965.50  5120 5168 5200 5280  1440 1443 1453 1525 +hsync -vsync
+  xrandr --addmode DP-1 "5120x1440_120R"
+  xrandr --output DP-1 --mode "5120x1440_120R"
 }
+
+pronkridderscreenhdmi() {
+  xrandr --newmode "5120x1440_100.00"  1084.75  5120 5552 6112 7104  1440 1443 1453 1527 -hsync +vsync
+  xrandr --addmode HDMI-1 "5120x1440_100.00"
+  xrandr --output HDMI-1 --mode "5120x1440_100.00"
+}
+
+pronkridderscreensix() {
+  xrandr --newmode "5120x1440R"  469.00  5120 5168 5200 5280  1440 1443 1453 1481 +hsync -vsync
+  xrandr --addmode DP-1 "5120x1440R"
+  xrandr --output DP-1 --auto
+  xrandr --output DP-1 --mode "5120x1440R"
+}
+
+alias rs=pronkridderscreensix
 
 tripled() {
   xrandr --output HDMI-1 --auto

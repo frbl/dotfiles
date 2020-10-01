@@ -19,6 +19,7 @@ if !exists("g:os")
   endif
 endif
 
+
 set hidden                                   " if hidden is not set, TextEdit might fail. (set for coc)
 set wildignore+=*.swp,*.zip,*.exe,*.class,*.jar,*/tmp/*,*.so " General wildignores
 set wildignore+=*.aux,*.bbl,*.pdf,*.out,*.fls,*.blg,*.synctex.gz,*.cls,*.fdb_latexmk,*.log " Tex wildignores
@@ -90,12 +91,23 @@ set nowrap                                  " Dont allow vim to insert hard newl
 
 " Plugins
 """""""""
-" Install vimplug if it is not installed
+" VIM Install vimplug if it is not installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+" NVIM Install vimplug if it is not installed
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs 
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+
+
 " set the runtime path to include Vundle and initialize
 call plug#begin()
 
@@ -198,7 +210,7 @@ let g:ale_completion_enabled = 1
 "When working with TypeScript files, ALE supports automatic imports from
 "external modules. This behavior is disabled by default and can be enabled by
 "setting:
-let g:ale_completion_tsserver_autoimport = 1
+let g:ale_completion_autoimport = 1
 
 let g:ale_lint_on_save = 0
 let g:ale_fix_on_save = 0
@@ -255,6 +267,9 @@ let g:coc_user_config = {
   \ [
   \   "~/.snippets/vim/UltiSnips",
   \ ],
+  \ "solargraph.autoformat": 'true',
+  \ "solargraph.formatting": 'true',
+  \ "solargraph.hover": 'true',
   \ "eslint.filetypes": [
   \     "javascript",
   \     "javascriptreact",
@@ -628,8 +643,8 @@ set omnifunc=syntaxcomplete#Complete
 highlight CursorLine guibg=#303000 ctermbg=234
 
 " Red line on 120
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%121v.\+/
+"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+"match OverLength /\%121v.\+/
 
 " General textediting
 """""""""""""""""""""

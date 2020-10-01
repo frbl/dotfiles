@@ -17,4 +17,7 @@ mkdir projects
 mkdir ecida
 touch 200419_webinar.md
 search rclo
+mkdir hoi
+rename fitbit2.json
 bulkrename 
+rename trees.csv
