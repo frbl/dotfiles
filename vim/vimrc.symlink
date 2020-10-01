@@ -125,7 +125,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/vim-easy-align'
 
 " Autocompletion / Emmet. Emmet is a tool for web development autocompletion.
-"Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 
 " Focused writing
 Plug 'junegunn/goyo.vim'
@@ -253,7 +253,7 @@ inoremap <silent><expr> <C-space> coc#refresh()
 
 let g:coc_global_extensions = [
   \ 'coc-solargraph', 'coc-eslint',  'coc-tsserver',
-  \ 'coc-html', 'coc-css', 'coc-yaml', 'coc-emmet',
+  \ 'coc-html', 'coc-css', 'coc-yaml',
   \ 'coc-marketplace',
   \ 'coc-snippets',
   \ 'coc-docker', 'coc-tslint']
@@ -366,6 +366,7 @@ nnoremap <c-p> :Files<cr>
 
 " JavaScript / HTML / CSS
 """""""""""""""""""""""""
+let g:user_emmet_install_global = 1
 
 " Testing
 " janko-m/vim-test

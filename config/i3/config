@@ -47,6 +47,9 @@ bindsym $mod+Return exec $term
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym Ctrl+Shift+3 exec xfce4-screenshooter
+bindsym Ctrl+Shift+4 exec xfce4-screenshooter -r
+
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5

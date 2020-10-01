@@ -139,6 +139,7 @@ roqua_clone "ishared" "svc-prediction-r" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-visualization-r" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-visualization-js" "researchable/samen-sturen"
 
+roqua_clone "roqua" "deployer" "roqua"
 roqua_clone "roqua" "roqua" "roqua"
 roqua_clone "roqua" "compose" "roqua"
 roqua_clone "roqua" "core" "roqua"
