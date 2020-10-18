@@ -5,7 +5,7 @@ filetype plugin indent on                    " required
 
 " Needed for Neovim
 let g:python_host_prog = '/Users/frbl/.pyenv/shims/python'
-let g:python3_host_prog = '/Users/frbl/.pyenv/shims/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 if has('python3')
   silent! python3 1
 endif
