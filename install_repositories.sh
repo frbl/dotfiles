@@ -104,6 +104,7 @@ gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
 gitlab_clone "researchable/general" "researchable-infrastructure"
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
+gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 
 # SDV
 gitlab_clone "researchable/sport-data-valley/sdv" "presentation-sdv-pitch"
