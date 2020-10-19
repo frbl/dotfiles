@@ -102,6 +102,7 @@ gitlab_clone "researchable" "landingpage"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
+gitlab_clone "researchable/general" "researchable-infrastructure"
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 
 # SDV
