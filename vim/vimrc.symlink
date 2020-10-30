@@ -259,8 +259,8 @@ let g:coc_global_extensions = [
   \ 'coc-docker', 'coc-tslint']
 
 let g:coc_user_config = {
-  \ "diagnostic.errorSign": '⚠',
-  \ "diagnostic.warningSign": '⚐',
+  \ "diagnostic.errorSign": '☠️',
+  \ "diagnostic.warningSign": '⚠',
   \ "diagnostic.infoSign": '⚐',
   \ "diagnostic.hintSign": '⚐',
   \ "snippets.ultisnips.directories":
@@ -269,6 +269,7 @@ let g:coc_user_config = {
   \ ],
   \ "solargraph.autoformat": 'true',
   \ "solargraph.formatting": 'true',
+  \ "solargraph.diagnostics": 'true',
   \ "solargraph.hover": 'true',
   \ "eslint.filetypes": [
   \     "javascript",

@@ -64,6 +64,7 @@ github_clone "frbl" "dotfiles"
 github_clone "frbl" "machine-learning-recurring-depression"
 github_clone "frbl" "onlinesuperlearner"
 github_clone "frbl" "vagrant-boxes"
+github_clone "frbl" "tmle-substitutes"
 
 github_clone "frbl" "tmle-time-series"
 github_clone "frbl" "research-slaapproblemen-en-agitatie"
