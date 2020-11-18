@@ -97,6 +97,7 @@ github_clone "rug-ds-lab" "ecida"
 github_clone "rug-ds-lab" "2018_Pratama_Low-intrusive-Power-Consumption-based-Occupancy-Detection-in-Office-Environment"
 
 github_clone "kasperdokter" "dsu"
+github_clone "mhadadian" "ecida-mvp"
 
 gitlab_clone "researchable" "quest-front-end"
 gitlab_clone "researchable" "landingpage"
@@ -104,6 +105,9 @@ gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
 gitlab_clone "researchable/general" "researchable-infrastructure"
+
+gitlab_clone "researchable/general/security" "vulnerability-scanning"
+
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 

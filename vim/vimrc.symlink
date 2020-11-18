@@ -162,12 +162,13 @@ Plug 'junegunn/fzf.vim'
 " git integration
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
 
 " Surround words with open and closing sign (cs<char>, i.e., cs; -> 'helloworld')
 Plug 'tpope/vim-surround'
 
 " Live syntax checking and linting
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 
 " Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -198,41 +199,44 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 
+" Presentations
+Plug 'sotte/presenting.vim'
+
 call plug#end() " required
 
 " w0rp/ale
 """"""""""
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_completion_enabled = 1
+"let g:ale_echo_msg_error_str = 'E'
+"let g:ale_echo_msg_warning_str = 'W'
+"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"let g:ale_completion_enabled = 1
 
-"When working with TypeScript files, ALE supports automatic imports from
-"external modules. This behavior is disabled by default and can be enabled by
-"setting:
-let g:ale_completion_autoimport = 1
+""When working with TypeScript files, ALE supports automatic imports from
+""external modules. This behavior is disabled by default and can be enabled by
+""setting:
+"let g:ale_completion_autoimport = 1
 
-let g:ale_lint_on_save = 0
-let g:ale_fix_on_save = 0
-highlight clear ALEWarningSign
-let g:ale_sign_error = '!'
-let g:ale_sign_warning = '.'
-let g:ale_linters = {
-\   'javascript': ['standard'],
-\   'typescript': ['tsserver', 'eslint']
-\}
+"let g:ale_lint_on_save = 0
+"let g:ale_fix_on_save = 0
+"highlight clear ALEWarningSign
+"let g:ale_sign_error = '!'
+"let g:ale_sign_warning = '.'
+"let g:ale_linters = {
+"\   'javascript': ['standard'],
+"\   'typescript': ['tsserver', 'eslint']
+"\}
 
-let g:ale_fixers = {
-\   'r': ['styler'],
-\   'javascript': ['standard'],
-\   'typescript': ['prettier', 'tslint'],
-\   'html': ['prettier'],
-\   'json': ['jq'],
-\   'python':  ['yapf'],
-\   'ruby':  ['rubocop'],
-\   'sh': ['shfmt'],
-\   'tex': ['latexindent']
-\}
+"let g:ale_fixers = {
+"\   'r': ['styler'],
+"\   'javascript': ['standard'],
+"\   'typescript': ['prettier', 'tslint'],
+"\   'html': ['prettier'],
+"\   'json': ['jq'],
+"\   'python':  ['yapf'],
+"\   'ruby':  ['rubocop'],
+"\   'sh': ['shfmt'],
+"\   'tex': ['latexindent']
+"\}
 
 "noremap <Leader>] :ALEFix<CR>
 "nmap <leader>gd  :ALEGoToDefinition<CR>
@@ -494,6 +498,10 @@ autocmd! FileType tex map <Leader>i bi\emph{<esc>Ea}<esc>
 " From: https://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
 autocmd BufEnter * sign define dummy
 autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
+
+" vim-blame
+" Show the gitblame status
+nmap <Leader>gm <Plug>(git-messenger)
 
 " Jump to the end of the sentence in insert mode with c-e
 inoremap <C-e> <C-o>A
