@@ -105,11 +105,15 @@ gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
 gitlab_clone "researchable/general" "researchable-infrastructure"
+gitlab_clone "researchable/general" "slack-bot"
+gitlab_clone "researchable/general" "gitlab-bot"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
+
+gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 
 # SDV
 gitlab_clone "researchable/sport-data-valley/sdv" "presentation-sdv-pitch"
