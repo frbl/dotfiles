@@ -105,8 +105,11 @@ gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
 gitlab_clone "researchable/general" "researchable-infrastructure"
+gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
+gitlab_clone "researchable/general/security" "kubernetes-rbac"
+gitlab_clone "researchable/general/security" "gitlab-ssh-key-validations"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
