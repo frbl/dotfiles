@@ -139,6 +139,8 @@ gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-mining-analysis-fitb
 
 #gitlab_clone "sport-data-valley" "poc-data"
 
+gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end-application"
+
 # i-shared
 #gitlab_clone "researchable/samen-sturen" "svc-visualization-r"
 gitlab_clone "researchable/samen-sturen" "svc-pdfgenerator"
