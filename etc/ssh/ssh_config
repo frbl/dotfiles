@@ -113,6 +113,7 @@ Host home
   LocalForward 9902 127.0.0.1:9902
   LocalForward 3000 127.0.0.1:3000
   LocalForward 3002 127.0.0.1:3001
+  LocalForward 3005 127.0.0.1:3005
   LocalForward 2000 127.0.0.1:2000
   LocalForward 2010 127.0.0.1:2010
   LocalForward 3010 127.0.0.1:3010
