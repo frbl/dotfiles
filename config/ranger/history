@@ -8,7 +8,6 @@ rename sdv
 rename planningvariables
 find fgg
 search icon
-delete
 touch 
 rename meetings
 touch 200407_enablemi.md
@@ -21,3 +20,5 @@ mkdir hoi
 rename fitbit2.json
 bulkrename 
 rename trees.csv
+delete
+rename scss

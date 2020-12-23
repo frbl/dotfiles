@@ -119,6 +119,9 @@ gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 
+gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end"
+gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end-application"
+
 # SDV
 gitlab_clone "researchable/sport-data-valley/sdv" "presentation-sdv-pitch"
 gitlab_clone "researchable/sport-data-valley/sdv" "sdv-infrastructure"

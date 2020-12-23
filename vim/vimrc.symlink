@@ -298,7 +298,7 @@ nmap <leader>gu <Plug>(coc-references)
 nmap <leader>rr <Plug>(coc-rename)
 nmap <leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>go <Plug>(coc-codeaction)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
@@ -312,6 +312,9 @@ nmap <leader>f  <Plug>(coc-format-selected)
 
 "" don't give |ins-completion-menu| messages.
 "set shortmess+=c
+"
+autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact
+
 
 "" Always show signcolumns
 set signcolumn=yes
@@ -690,3 +693,4 @@ autocmd FileType markdown noremap <Leader>ll :Pandoc pdf<cr>
 autocmd FileType ruby noremap <leader>ll :!ruby %<cr>
 autocmd FileType json noremap <leader>ll :!jq %<cr>
 autocmd FileType sh noremap <leader>ll :!bash %<cr>
+
