@@ -183,7 +183,8 @@ Plug 'honza/vim-snippets'
 
 " JavaScript
 Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Ruby
 "Plug 'vim-ruby/vim-ruby'
