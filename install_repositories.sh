@@ -110,7 +110,7 @@ gitlab_clone "researchable/general" "gitlab-bot"
 
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
-gitlab_clone "researchable/general/templates" "docs"
+gitlab_clone "researchable/general/templates" "docs-template"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
