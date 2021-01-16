@@ -102,11 +102,14 @@ github_clone "mhadadian" "ecida-mvp"
 gitlab_clone "researchable" "quest-front-end"
 gitlab_clone "researchable" "landingpage"
 gitlab_clone "researchable" "presentations"
+gitlab_clone "researchable" "renovate"
+
 gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
 gitlab_clone "researchable/general" "researchable-infrastructure"
 gitlab_clone "researchable/general" "slack-bot"
 gitlab_clone "researchable/general" "gitlab-bot"
+
 
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
