@@ -10,6 +10,8 @@ alias profile='vim ~/.profile_files'
 alias zshrc='vim ~/.zshrc'
 alias dus='du -sh -d1 * | gsort -h'
 
+alias pw='openssl rand -base64 32'
+
 function encrypt { gpg --output $1.gpg --encrypt --recipient 743F90E1 $1; }
 function decrypt { gpg --decrypt $1;}
 

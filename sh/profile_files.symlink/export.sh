@@ -14,9 +14,9 @@ export HISTFILESIZE=1000000
 export HISTCONTROL=ignoreboth
 
 # Editor
-export EDITOR='vim'
-export GIT_EDITOR='vim'
-export SVN_EDITOR='vim'
+export EDITOR='nvim'
+export GIT_EDITOR='nvim'
+export SVN_EDITOR='nvim'
 
 # Nvim
 # Use ascii backspace

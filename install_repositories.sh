@@ -155,6 +155,9 @@ gitlab_clone "researchable/samen-sturen" "svc-pdfgenerator"
 gitlab_clone "researchable/samen-sturen" "composer"
 gitlab_clone "researchable/samen-sturen" "infrastructure"
 
+gitlab_clone "researchable/open-source/forks" "materialize"
+gitlab_clone "researchable/open-source/forks" "react-add-to-homescreen"
+
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
