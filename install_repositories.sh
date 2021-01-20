@@ -110,6 +110,8 @@ gitlab_clone "researchable/general" "researchable-infrastructure"
 gitlab_clone "researchable/general" "slack-bot"
 gitlab_clone "researchable/general" "gitlab-bot"
 
+gitlab_clone "researchable/general/docker-images" "curl"
+gitlab_clone "researchable/general/docker-images" "kubectl"
 
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
