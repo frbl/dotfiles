@@ -171,6 +171,8 @@ gitlab_clone "researchable/projects/umo" "composer"
 gitlab_clone "researchable/projects/umo" "base-frontend"
 gitlab_clone "researchable/projects/umo" "base-backend"
 
+# Aukati
+gitlab_clone "researchable/aukati" "svc-auth"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
