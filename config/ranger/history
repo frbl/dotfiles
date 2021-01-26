@@ -30,4 +30,6 @@ touch deployment.yaml
 open_with 
 delete
 bulkrename 
+rename commitlint.config.js
 
+rename Dockerfile

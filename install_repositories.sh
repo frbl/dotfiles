@@ -162,8 +162,15 @@ gitlab_clone "researchable/samen-sturen" "infrastructure"
 gitlab_clone "researchable/open-source/forks" "materialize"
 gitlab_clone "researchable/open-source/forks" "react-add-to-homescreen"
 
-roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
+# UMO
+gitlab_clone "researchable/projects/umo" "docs"
+gitlab_clone "researchable/projects/umo" "infrastructure"
+gitlab_clone "researchable/projects/umo" "composer"
+gitlab_clone "researchable/projects/umo" "base-frontend"
+gitlab_clone "researchable/projects/umo" "base-backend"
 
+
+roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
 roqua_clone "ishared" "prediction-model-r-raw" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-prediction-r" "researchable/samen-sturen"
