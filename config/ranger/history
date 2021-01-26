@@ -21,7 +21,6 @@ rename scss
 w
 mkdir nginx-ingress
 mkdir scripts
-shell 
 mkdir namespaces
 mkdir gitlab
 memory-limits
@@ -33,3 +32,7 @@ bulkrename
 rename commitlint.config.js
 
 rename Dockerfile
+set viewmode multipane
+shell 
+help
+set viewmode!

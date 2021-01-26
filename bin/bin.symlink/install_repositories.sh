@@ -125,6 +125,8 @@ gitlab_clone "researchable/samen-sturen" "svc-prediction"
 gitlab_clone "researchable/samen-sturen" "composer"
 gitlab_clone "researchable/samen-sturen" "infrastructure"
 
+roqua_clone "researchable/general/templates/gitlab" "semantic-release"
+
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 
 roqua_clone "ishared" "prediction-model-r-raw" "researchable/samen-sturen"
@@ -132,6 +134,7 @@ roqua_clone "ishared" "svc-prediction-r" "researchable/samen-sturen"
 roqua_clone "ishared" "svc-visualization-r" "researchable/samen-sturen"
 
 roqua_clone "roqua" "roqua" "roqua"
+
 
 #gitlab_clone "roqua" "autovar"
 
