@@ -1,5 +1,5 @@
 #!/bin/bash
-config=./commit-msg.config.json
+config=.git/hooks/commit-msg.config.json
 
 # set variables
 enabled=$(jq -r .enabled $config)
