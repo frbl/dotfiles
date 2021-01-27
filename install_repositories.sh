@@ -117,7 +117,9 @@ gitlab_clone "researchable/general/docker-images" "kubectl"
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
 gitlab_clone "researchable/general/templates/projects" "docs-template"
+
 gitlab_clone "researchable/general/templates/gitlab" "semantic-release"
+gitlab_clone "researchable/general/templates/gitlab" "swagger"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
