@@ -18,7 +18,6 @@ mkdir hoi
 rename fitbit2.json
 rename trees.csv
 rename scss
-w
 mkdir nginx-ingress
 mkdir scripts
 mkdir namespaces
@@ -27,7 +26,6 @@ memory-limits
 mkdir memory-limits
 touch deployment.yaml
 open_with 
-delete
 bulkrename 
 rename commitlint.config.js
 
@@ -36,3 +34,8 @@ set viewmode multipane
 shell 
 help
 set viewmode!
+open_with p
+delete
+mkdir v1
+wqa
+w
