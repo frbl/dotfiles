@@ -122,6 +122,7 @@ gitlab_clone "researchable/general/templates/projects" "docs-template"
 gitlab_clone "researchable/general/templates/gitlab" "semantic-release"
 gitlab_clone "researchable/general/templates/gitlab" "swagger"
 gitlab_clone "researchable/general/templates/gitlab" "base"
+gitlab_clone "researchable/general/templates/gitlab" "documentation"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
@@ -174,6 +175,10 @@ gitlab_clone "researchable/projects/umo" "infrastructure"
 gitlab_clone "researchable/projects/umo" "composer"
 gitlab_clone "researchable/projects/umo" "base-frontend"
 gitlab_clone "researchable/projects/umo" "base-backend"
+
+# Delta Dashboard
+gitlab_clone "researchable/projects/delta-dashboard" "base-frontend"
+gitlab_clone "researchable/projects/delta-dashboard" "docs"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
