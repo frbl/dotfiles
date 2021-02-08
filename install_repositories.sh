@@ -121,6 +121,7 @@ gitlab_clone "researchable/general/templates/projects" "docs-template"
 
 gitlab_clone "researchable/general/templates/gitlab" "semantic-release"
 gitlab_clone "researchable/general/templates/gitlab" "swagger"
+gitlab_clone "researchable/general/templates/gitlab" "docker-deploy"
 gitlab_clone "researchable/general/templates/gitlab" "base"
 gitlab_clone "researchable/general/templates/gitlab" "documentation"
 
