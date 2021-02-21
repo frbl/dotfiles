@@ -26,7 +26,6 @@ memory-limits
 mkdir memory-limits
 touch deployment.yaml
 open_with 
-bulkrename 
 rename commitlint.config.js
 
 rename Dockerfile
@@ -35,7 +34,9 @@ shell
 help
 set viewmode!
 open_with p
-delete
 mkdir v1
 wqa
 w
+rename Measurement.ts
+bulkrename 
+delete
