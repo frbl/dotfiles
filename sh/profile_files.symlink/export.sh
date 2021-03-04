@@ -86,6 +86,7 @@ export PATH="$PATH:/usr/local/bin/storm"
 export PATH="$PATH:~/.sdkman/candidates/spark/current/bin"
 export PATH="$PATH:~/shared_bin"
 export PATH="$PATH:~/istio-1.1.4/bin"
+export PATH="$PATH:/snap/bin"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Fabric
