@@ -129,6 +129,7 @@ gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
 gitlab_clone "researchable/general/security" "gitlab-ssh-key-validations"
 gitlab_clone "researchable/general/security" "pipeline_checker"
+gitlab_clone "researchable/general/security" "certificate_checker"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
@@ -184,6 +185,7 @@ gitlab_clone "researchable/projects/delta-dashboard" "docs"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
+gitlab_clone "researchable/aukati" "docs"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
