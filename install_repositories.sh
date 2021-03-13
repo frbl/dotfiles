@@ -100,7 +100,8 @@ github_clone "kasperdokter" "dsu"
 github_clone "mhadadian" "ecida-mvp"
 
 gitlab_clone "researchable" "quest-front-end"
-gitlab_clone "researchable" "landingpage"
+gitlab_clone "researchable/general/landingpages" "landingpage"
+gitlab_clone "researchable/general/landingpages" "abl"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable" "renovate"
 
@@ -135,6 +136,7 @@ gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
+gitlab_clone "researchable/general/test-projects" "openwhisk-test"
 
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end"
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end-application"
