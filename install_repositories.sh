@@ -55,6 +55,20 @@ roqua_clone() {
   cd $pre
 }
 
+tudelft_clone() {
+  pre=`pwd`
+  org=$1
+  repo=$2
+  folder=$3
+  mkdir -p $folder
+  cd $folder
+  if [ ! -d "$2" ]
+  then
+    git clone git@gitlab.tudelft.nl:$org/$repo.git
+  fi
+  cd $pre
+}
+
 
 
 github_clone "frbl" "notes"
@@ -100,7 +114,8 @@ github_clone "kasperdokter" "dsu"
 github_clone "mhadadian" "ecida-mvp"
 
 gitlab_clone "researchable" "quest-front-end"
-gitlab_clone "researchable" "landingpage"
+gitlab_clone "researchable/general/landingpages" "landingpage"
+gitlab_clone "researchable/general/landingpages" "abl"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable" "renovate"
 
@@ -128,6 +143,7 @@ gitlab_clone "researchable/general/templates/gitlab" "documentation"
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
 gitlab_clone "researchable/general/security" "gitlab-ssh-key-validations"
+gitlab_clone "researchable/general/security" "pipeline_checker"
 gitlab_clone "researchable/general/security" "certificate_checker"
 gitlab_clone "researchable/general/security" "pipeline_checker"
 
@@ -135,6 +151,10 @@ gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
+gitlab_clone "researchable/general/test-projects" "openwhisk-test"
+gitlab_clone "researchable/general/test-projects" "aws-lambda-ruby-test"
+gitlab_clone "researchable/general/test-projects" "twitter-api-test"
+
 
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end"
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end-application"
@@ -200,6 +220,11 @@ roqua_clone "roqua" "compose" "roqua"
 roqua_clone "roqua" "core" "roqua"
 roqua_clone "roqua" "questionnaires" "roqua" 
 
+tudelft_clone "umo-development" "umo-ckan" "umo-development"
+tudelft_clone "umo-development" "ckanuploadclient-java" "umo-development"
+tudelft_clone "umo-development" "ckanuploadclient" "umo-development"
+tudelft_clone "umo-development/umo-deployment" "umo-nomad-deployment" "umo-development/umo-deployment"
+
 #gitlab_clone "roqua" "autovar"
 
 # Vitens
@@ -210,6 +235,10 @@ gitlab_clone "vitens/ecida" "ecida-docker-container-builder-service"
 gitlab_clone "vitens/ecida" "abstract-operator"
 gitlab_clone "vitens/ecida" "utilities"
 gitlab_clone "vitens/ecida/templates" "base"
+
+
+
+
 
 github_http_clone "jvm-operators" "abstract-operator"
 

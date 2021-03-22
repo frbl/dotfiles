@@ -17,8 +17,9 @@
   ignore = "!git rm -r --cached .; git commit -a"
 
 [user]
-	email = frank.blaauw@gmail.com
+	email = f.j.blaauw@researchable.nl
 	name = Frank Blaauw
+	signingkey = 433A4D006D0344B08D6502FD7013901F19B263CF
 
 [filter "media"]
 	required = true
@@ -69,3 +70,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
