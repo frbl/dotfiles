@@ -205,6 +205,7 @@ gitlab_clone "researchable/projects/delta-dashboard" "docs"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
+gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
