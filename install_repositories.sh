@@ -114,6 +114,7 @@ github_clone "kasperdokter" "dsu"
 github_clone "mhadadian" "ecida-mvp"
 
 gitlab_clone "researchable" "quest-front-end"
+gitlab_clone "researchable/general/landingpages" "landingpage-v2"
 gitlab_clone "researchable/general/landingpages" "landingpage"
 gitlab_clone "researchable/general/landingpages" "abl"
 gitlab_clone "researchable" "presentations"
@@ -206,6 +207,7 @@ gitlab_clone "researchable/projects/delta-dashboard" "docs"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
+gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 
