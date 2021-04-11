@@ -204,7 +204,7 @@ alias forward='networksetup -setsocksfirewallproxy Wi-Fi localhost 8080;ssh -D 8
 alias forwards='networksetup -setsocksfirewallproxystate Wi-Fi off'
 alias forward-umcg='networksetup -setsocksfirewallproxy Ethernet localhost 8080;ssh -C -q -N stag-fizzy-web1 ;networksetup -setsocksfirewallproxystate Ethernet off'
 alias intranet='ssh -D 8080 -C -q -N stag-fizzy-web1&; networksetup -setsocksfirewallproxy Wi-Fi localhost 8080;open http://intranet.med.umcg.nl'
-alias i='ssh work.evionix.org'
+alias i='~/.cache/dotfiles/install_repositories.sh '
 alias ivpn='sshuttle --dns -vr imac 0/0 --disable-ipv6'
 
 # Python
