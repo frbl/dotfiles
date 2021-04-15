@@ -31,14 +31,14 @@ rename commitlint.config.js
 rename Dockerfile
 set viewmode multipane
 shell 
-help
 set viewmode!
 open_with p
 mkdir v1
-wqa
 w
 rename Measurement.ts
 bulkrename 
-delete
 rename 210319_questionnaire.docx
 q
+help
+delete
+wqa

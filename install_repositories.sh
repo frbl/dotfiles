@@ -120,7 +120,6 @@ gitlab_clone "researchable/general/landingpages" "abl"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable" "renovate"
 
-gitlab_clone "researchable/general" "docker"
 gitlab_clone "researchable/general" "development-infrastructure"
 gitlab_clone "researchable/general" "researchable-infrastructure"
 gitlab_clone "researchable/general" "slack-bot"
@@ -130,6 +129,7 @@ gitlab_clone "researchable/general" "researchable-cli"
 gitlab_clone "researchable/general/docker-images" "curl"
 gitlab_clone "researchable/general/docker-images" "kubectl"
 gitlab_clone "researchable/general/docker-images" "docker"
+gitlab_clone "researchable/general/docker-images" "pandoc"
 
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
