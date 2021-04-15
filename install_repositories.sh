@@ -114,6 +114,7 @@ github_clone "kasperdokter" "dsu"
 github_clone "mhadadian" "ecida-mvp"
 
 gitlab_clone "researchable" "quest-front-end"
+gitlab_clone "researchable/general/landingpages" "landingpage-v2"
 gitlab_clone "researchable/general/landingpages" "landingpage"
 gitlab_clone "researchable/general/landingpages" "abl"
 gitlab_clone "researchable" "presentations"
@@ -136,6 +137,7 @@ gitlab_clone "researchable/general/templates/projects" "docs-template"
 
 gitlab_clone "researchable/general/templates/gitlab" "semantic-release"
 gitlab_clone "researchable/general/templates/gitlab" "swagger"
+gitlab_clone "researchable/general/templates/gitlab" "kubernetes-post-deploy"
 gitlab_clone "researchable/general/templates/gitlab" "docker-deploy"
 gitlab_clone "researchable/general/templates/gitlab" "base"
 gitlab_clone "researchable/general/templates/gitlab" "documentation"
@@ -205,7 +207,9 @@ gitlab_clone "researchable/projects/delta-dashboard" "docs"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
+gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
+gitlab_clone "researchable/aukati" "svclss-mailer"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
@@ -223,6 +227,7 @@ roqua_clone "roqua" "questionnaires" "roqua"
 tudelft_clone "umo-development" "umo-ckan" "umo-development"
 tudelft_clone "umo-development" "ckanuploadclient-java" "umo-development"
 tudelft_clone "umo-development" "ckanuploadclient" "umo-development"
+tudelft_clone "umo-development" "umo-ckan-docker" "umo-development"
 tudelft_clone "umo-development/umo-deployment" "umo-nomad-deployment" "umo-development/umo-deployment"
 
 #gitlab_clone "roqua" "autovar"
