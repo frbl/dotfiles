@@ -485,6 +485,9 @@ map <Leader>k :call DeleteTrailingWS()<cr>
 " " which is the default
 map Y y$
 
+" Map J to itself and also jump back after merging
+nnoremap J J0
+
 " sudo to write
 cmap w!! w !sudo tee % >/dev/null
 
