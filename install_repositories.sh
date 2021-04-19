@@ -148,6 +148,7 @@ gitlab_clone "researchable/general/security" "gitlab-ssh-key-validations"
 gitlab_clone "researchable/general/security" "pipeline_checker"
 gitlab_clone "researchable/general/security" "certificate_checker"
 gitlab_clone "researchable/general/security" "pipeline_checker"
+gitlab_clone "researchable/general/security" "postgres_backup_checker"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
