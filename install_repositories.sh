@@ -154,11 +154,13 @@ gitlab_clone "researchable/general/security" "postgres_backup_checker"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
+gitlab_clone "researchable/general/management" "bookkeeper"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 gitlab_clone "researchable/general/test-projects" "openwhisk-test"
 gitlab_clone "researchable/general/test-projects" "aws-lambda-ruby-test"
 gitlab_clone "researchable/general/test-projects" "twitter-api-test"
+gitlab_clone "researchable/general/test-projects" "cypress-test"
 
 
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end"

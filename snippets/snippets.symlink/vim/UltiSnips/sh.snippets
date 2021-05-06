@@ -32,3 +32,10 @@ endsnippet
 snippet ve "If variable exists"
 [ -z "$${1:VARIABLE}" ] && echo "Need to set ${1:VARIABLE}" && exit 1; 
 endsnippet
+
+snippet foreif "for each in file"
+cat $1 | while read line 
+do
+   echo $line
+done
+endsnippet
