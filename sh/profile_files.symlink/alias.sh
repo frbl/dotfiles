@@ -269,6 +269,8 @@ alias d='docker'
 alias dc='docker-compose'
 alias dcbu='dc down; dc build; dc up;'
 
+alias swagger='echo "Starting swagger on port 8888"; d run -p 8888:8080 swaggerapi/swagger-editor'
+
 # Torrenting
 torrentfunction() {
 	tmux -c 'echo HOI$1; /usr/local/bin/transmission-cli -p 25000 $1'

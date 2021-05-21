@@ -131,6 +131,8 @@ gitlab_clone "researchable/general/docker-images" "kubectl"
 gitlab_clone "researchable/general/docker-images" "docker"
 gitlab_clone "researchable/general/docker-images" "pandoc"
 
+gitlab_clone "researchable/general/infrastructure" "kubernetes-restart-deployments"
+
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
 gitlab_clone "researchable/general/templates/projects" "docs-template"
@@ -142,6 +144,7 @@ gitlab_clone "researchable/general/templates/gitlab" "docker-deploy"
 gitlab_clone "researchable/general/templates/gitlab" "base"
 gitlab_clone "researchable/general/templates/gitlab" "documentation"
 gitlab_clone "researchable/general/templates/gitlab" "upstream-mirror"
+gitlab_clone "researchable/general/templates/gitlab" "dependency-scanning-test"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
@@ -195,6 +198,7 @@ gitlab_clone "researchable/samen-sturen" "svc-pdfgenerator"
 #gitlab_clone "researchable/samen-sturen" "svc-prediction"
 gitlab_clone "researchable/samen-sturen" "composer"
 gitlab_clone "researchable/samen-sturen" "infrastructure"
+gitlab_clone "researchable/samen-sturen" "docs"
 
 gitlab_clone "researchable/open-source/forks" "materialize"
 gitlab_clone "researchable/open-source/forks" "react-add-to-homescreen"
@@ -209,6 +213,10 @@ gitlab_clone "researchable/projects/umo" "base-backend"
 # Delta Dashboard
 gitlab_clone "researchable/projects/delta-dashboard" "base-frontend"
 gitlab_clone "researchable/projects/delta-dashboard" "docs"
+
+gitlab_clone "researchable/projects/ucl-recessly" "docs"
+gitlab_clone "researchable/projects/ucl-recessly" "base-frontend"
+gitlab_clone "researchable/projects/ucl-recessly" "base-backend"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"

@@ -39,3 +39,9 @@ do
    echo $line
 done
 endsnippet
+
+snippet foreiv "for each in variable"
+while IFS= read -r 2; do
+    echo "... $2 ..."
+done <<< "$1"
+endsnippet
