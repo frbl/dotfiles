@@ -62,7 +62,7 @@ end
 def date_colorization(date)
   return "\t" * 2 unless date
 
-  "\t#{colorize_string(date, boolean_color(date < Time.now.to_date))}"
+  "\t#{colorize_string(date, boolean_color(date <= Time.now.to_date))}"
 end
 
 def status_format(status)
