@@ -189,16 +189,15 @@ gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-mining-analysis-fitb
 gitlab_clone "researchable/sport-data-valley/MVP" "test-deployment"
 
 #gitlab_clone "sport-data-valley" "poc-data"
+gitlab_clone "sportdatavalley" "data-mining-analysis-fitbit"
 
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end-application"
 
 # i-shared
 #gitlab_clone "researchable/samen-sturen" "svc-visualization-r"
-gitlab_clone "researchable/samen-sturen" "svc-pdfgenerator"
+gitlab_clone "researchable/projects/i-shared" "svc-pdfgenerator"
 #gitlab_clone "researchable/samen-sturen" "svc-prediction"
-gitlab_clone "researchable/samen-sturen" "composer"
-gitlab_clone "researchable/samen-sturen" "infrastructure"
-gitlab_clone "researchable/samen-sturen" "docs"
+gitlab_clone "researchable/projects/i-shared" "docs"
 
 gitlab_clone "researchable/open-source/forks" "materialize"
 gitlab_clone "researchable/open-source/forks" "react-add-to-homescreen"
