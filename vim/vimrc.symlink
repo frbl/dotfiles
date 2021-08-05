@@ -140,7 +140,8 @@ Plug 'itchyny/lightline.vim'
 
 " Use fzf
 if g:os == "Darwin"
-  Plug '/usr/local/opt/fzf'
+  "Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }
 elseif g:os == "Linux"
   Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }
 elseif g:os == "Windows"
@@ -329,7 +330,7 @@ endif
 nnoremap <cr> :TestLast<cr>
 nnoremap <leader>T :TestNearest<cr>
 nnoremap <leader>a :TestSuite<cr>
-let test#ruby#rspec#executable = 'sudo bin/be rspec'
+let test#ruby#rspec#executable = 'bin/be rspec'
 let test#javascript#jest#executable = 'sudo bin/be yarn test'
 
 " R-language
