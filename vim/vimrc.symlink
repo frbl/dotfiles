@@ -111,7 +111,6 @@ call plug#begin()
 Plug 'gmarik/Vundle.vim'
 
 " Color schemas
-Plug 'vim-scripts/twilight'
 Plug 'vim-scripts/twilight256.vim'
 
 " Support for editor config (editorconfig.org)
@@ -139,14 +138,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 
 " Use fzf
-if g:os == "Darwin"
-  "Plug '/usr/local/opt/fzf'
-  Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }
-elseif g:os == "Linux"
-  Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }
-elseif g:os == "Windows"
-  " nothing
-endif
+Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 " git integration
@@ -239,6 +231,9 @@ nmap <leader>go <Plug>(coc-codeaction)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart<CR>
+"
+" Use <Leader-,> for trigger snippet expand.
+imap <Leader>, <Plug>(coc-snippets-expand)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -266,12 +261,11 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 " use sv to reload vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -283,17 +277,6 @@ endfunction
 "  Easy align
 """"""""
 xmap ga <Plug>(EasyAlign)
-
-" Snipmate / Ultisnips
-""""""""""""""""""""""
-"let g:UltiSnipsExpandTrigger=",,"
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-""
-"let g:UltiSnipsSnippetDirectories = ['/Users/frbl/.snippets/vim/UltiSnips']
-"au FileType javascript :UltiSnipsAddFiletypes javascript
-" Use <C-l> for trigger snippet expand.
-imap <Leader>, <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
@@ -314,13 +297,8 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 "nnoremap <c-p> :FZF<cr>
 nnoremap <c-p> :Files<cr>
 
-" JavaScript / HTML / CSS
-"""""""""""""""""""""""""
-let g:user_emmet_install_global = 1
-
 " Testing
 " janko-m/vim-test
-
 if has('nvim')
   let test#strategy = "neovim"
 else
@@ -330,8 +308,14 @@ endif
 nnoremap <cr> :TestLast<cr>
 nnoremap <leader>T :TestNearest<cr>
 nnoremap <leader>a :TestSuite<cr>
-let test#ruby#rspec#executable = 'bin/be rspec'
-let test#javascript#jest#executable = 'sudo bin/be yarn test'
+
+if g:os == "Darwin"
+  let test#ruby#rspec#executable = 'bin/be rspec'
+  let test#javascript#jest#executable = 'bin/be yarn test'
+elseif g:os == "Linux"
+  let test#ruby#rspec#executable = 'bin/be rspec'
+  let test#javascript#jest#executable = 'bin/be yarn test'
+endif
 
 " R-language
 """"""""""""
@@ -346,7 +330,6 @@ let g:R_assign = 0
 let R_in_buffer = 1
 
 " Ruby / Rspec
-
 let g:fold_rspec_foldenable = 0      " disables folding (toggle with `zi`)
 let g:fold_rspec_foldlevel = 2       " sets initial open/closed state of all folds (open unless nested more than two levels deep)
 let g:fold_rspec_foldcolumn = 4      " shows a 4-character column on the lefthand side of the window displaying the document's fold structure
@@ -363,7 +346,6 @@ autocmd BufNewFile,BufRead *.rmd set filetype=markdown
 " Lightline
 """""""""""
 set laststatus=2               " tell VIM to always put a status line in, even if there is only one window
-
 
 " NERDTREE
 """"""""""
@@ -388,10 +370,6 @@ let g:netrw_list_hide = netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' 
 autocmd FileType netrw setlocal bufhidden=delete
 "map <C-n> :Lexplore<CR>
-
-" Ranger
-""""""""
-"map <C-n>f :Ranger<CR>
 
 " TMUX
 """"""
@@ -427,10 +405,6 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" Just use gt and gT instead of these bindings
-"map <Leader>n <esc>:tabprevious<CR>
-"map <Leader>m <esc>:tabnext<CR>
-
 " Duplicate selected text
 map <Leader>d "dyy"dp
 vnoremap <Leader>d "dy"dP
@@ -443,13 +417,6 @@ autocmd! FileType tex map <Leader>i bi\emph{<esc>Ea}<esc>
 " From: https://superuser.com/questions/558876/how-can-i-make-the-sign-column-show-up-all-the-time-even-if-no-signs-have-been-a
 autocmd BufEnter * sign define dummy
 autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('')
-
-" vim-blame
-" Show the gitblame status
-nmap <Leader>gm <Plug>(git-messenger)
-
-" Jump to the end of the sentence in insert mode with c-e
-inoremap <C-e> <C-o>A
 
 " Easier indenting code blocks
 vnoremap < <gv
@@ -501,18 +468,6 @@ function! s:DiffWithSaved()
 endfunction
 com! Diff call s:DiffWithSaved()
 
-
-" Only use number for now, as for some reason the relative number is really
-" slow!
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
-  else
-    set relativenumber
-  endif
-endfunc
-
-
 if g:os == "Darwin"
   set number
 elseif g:os == "Linux"
@@ -522,10 +477,7 @@ elseif g:os == "Linux"
   au FocusGained * :set relativenumber
   autocmd InsertEnter * :set number
   autocmd InsertLeave * :set relativenumber
-elseif g:os == "Windows"
-  " nothing
 endif
-
 
 " The Silver Searcher
 """""""""""""""""""""
@@ -626,7 +578,6 @@ autocmd BufNewFile,BufRead *.md set wrap
 " Run current file
 autocmd FileType octave noremap <Leader>ll ggOpkg load all<esc>Gopause<esc>:w<cr>:!octave -qf %<cr>ddggdd:w<cr>
 autocmd FileType markdown noremap <Leader>ll :Pandoc pdf<cr>
-autocmd FileType ruby noremap <leader>ll :!ruby %<cr>
+autocmd FileType ruby noremap <leader>ll :!./%<cr>
 autocmd FileType json noremap <leader>ll :!jq %<cr>
-autocmd FileType sh noremap <leader>ll :!bash %<cr>
-
+autocmd FileType sh noremap <leader>ll :!./%<cr>
