@@ -156,7 +156,7 @@ Plug 'christoomey/vim-system-copy'
 
 " Snippet support
 " Dependency for snipmate
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " JavaScript
@@ -231,9 +231,6 @@ nmap <leader>go <Plug>(coc-codeaction)
 nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
 nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart<CR>
-"
-" Use <Leader-,> for trigger snippet expand.
-imap <Leader>, <Plug>(coc-snippets-expand)
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
@@ -248,18 +245,19 @@ set cmdheight=2
 "" Always show signcolumns
 set signcolumn=yes
 
-"" Use tab for trigger completion with characters ahead and navigate.
+" use <tab> for trigger completion and navigate to the next complete item
 "" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+  return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " use sv to reload vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -279,17 +277,18 @@ endfunction
 xmap ga <Plug>(EasyAlign)
 
 " Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+" Use <Leader-,> for trigger snippet expand.
+imap <Leader>, <Plug>(coc-snippets-expand)
+vmap <Leader>, <Plug>(coc-snippets-select)
+imap <Leader>, <Plug>(coc-snippets-expand-jump)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+" Use <C-j> for both expand and jump (make expand higher priority.)
+let g:coc_snippet_next = ',,'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
-let g:coc_snippet_next = '<tab>'
 
 " FZF
 """""
