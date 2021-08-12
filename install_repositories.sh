@@ -155,6 +155,7 @@ gitlab_clone "researchable/general/security" "certificate_checker"
 gitlab_clone "researchable/general/security" "certificate_quality_checker"
 gitlab_clone "researchable/general/security" "pipeline_checker"
 gitlab_clone "researchable/general/security" "postgres_backup_checker"
+gitlab_clone "researchable/general/security" "mongodb_backup_checker"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
@@ -195,9 +196,12 @@ gitlab_clone "sportdatavalley" "data-mining-analysis-fitbit"
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end-application"
 
 # i-shared
-#gitlab_clone "researchable/samen-sturen" "svc-visualization-r"
+gitlab_clone "researchable/projects/i-shared" "svc-visualization-js"
+gitlab_clone "researchable/projects/i-shared" "infrastructure"
 gitlab_clone "researchable/projects/i-shared" "svc-pdfgenerator"
+gitlab_clone "researchable/projects/i-shared" "svc-prediction-r"
 #gitlab_clone "researchable/samen-sturen" "svc-prediction"
+gitlab_clone "researchable/projects/i-shared" "composer"
 gitlab_clone "researchable/projects/i-shared" "docs"
 
 gitlab_clone "researchable/open-source/forks" "materialize"
