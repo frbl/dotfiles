@@ -203,6 +203,9 @@ gitlab_clone "researchable/projects/i-shared" "docs"
 gitlab_clone "researchable/open-source/forks" "materialize"
 gitlab_clone "researchable/open-source/forks" "react-add-to-homescreen"
 
+gitlab_clone "researchable/open-source/openapi" "serverless-lambda-ruby"
+gitlab_clone "researchable/open-source/openapi" "serverless-lambda-node"
+
 # UMO
 gitlab_clone "researchable/projects/umo" "docs"
 gitlab_clone "researchable/projects/umo" "infrastructure"
@@ -223,6 +226,7 @@ gitlab_clone "researchable/aukati" "svc-auth"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
 gitlab_clone "researchable/aukati" "svclss-mailer"
+gitlab_clone "researchable/aukati" "svc-payments"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
