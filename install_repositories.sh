@@ -109,9 +109,11 @@ github_clone "rug-ds-lab" "planning-dynamic-spark"
 github_clone "rug-ds-lab" "ecida-main"
 github_clone "rug-ds-lab" "ecida"
 github_clone "rug-ds-lab" "2018_Pratama_Low-intrusive-Power-Consumption-based-Occupancy-Detection-in-Office-Environment"
+github_clone "rug-ds-lab" "2021-msc-ecida-open-source"
 
 github_clone "kasperdokter" "dsu"
 github_clone "mhadadian" "ecida-mvp"
+
 
 gitlab_clone "researchable" "quest-front-end"
 gitlab_clone "researchable/general/landingpages" "landingpage-v2"
@@ -130,6 +132,7 @@ gitlab_clone "researchable/general/docker-images" "curl"
 gitlab_clone "researchable/general/docker-images" "kubectl"
 gitlab_clone "researchable/general/docker-images" "docker"
 gitlab_clone "researchable/general/docker-images" "pandoc"
+gitlab_clone "researchable/general/docker-images" "mongosh"
 
 gitlab_clone "researchable/general/infrastructure" "kubernetes-restart-deployments"
 
@@ -146,6 +149,7 @@ gitlab_clone "researchable/general/templates/gitlab" "base"
 gitlab_clone "researchable/general/templates/gitlab" "documentation"
 gitlab_clone "researchable/general/templates/gitlab" "upstream-mirror"
 gitlab_clone "researchable/general/templates/gitlab" "dependency-scanning-test"
+gitlab_clone "researchable/general/templates/gitlab" "es-check-test"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
@@ -189,6 +193,8 @@ gitlab_clone "researchable/sport-data-valley/MVP" "jupyterhub"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-backups"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-mining-analysis-fitbit"
 gitlab_clone "researchable/sport-data-valley/MVP" "test-deployment"
+gitlab_clone "researchable/sport-data-valley/MVP" "loadtest"
+gitlab_clone "researchable/sport-data-valley/MVP" "kube-backups"
 
 #gitlab_clone "sport-data-valley" "poc-data"
 gitlab_clone "sportdatavalley" "data-mining-analysis-fitbit"
