@@ -63,10 +63,6 @@ zz() {
 }
  
 
-kube-reapply() {
-  KUBECONFIG=$PWD/secrets/admin.conf kubectl delete -f $*
-  KUBECONFIG=$PWD/secrets/admin.conf kubectl apply -f $*
-}
 
 agent() {
   ssh-agent > ~/.ssh-agent
@@ -265,9 +261,38 @@ alias gcob='g cob'
 
 # docker / kube
 alias k='kubectl'
+ksh() {
+  echo Namepace $1
+  echo Application $2
+  pod=`kubectl get pods -n $1 -l app=$2 --field-selector=status.phase=Running --no-headers | grep Running | awk '{print $1}' | head -n1`
+  echo Pod $pod
+  kubectl exec -it -n $1 $pod -- /bin/sh
+}
+
+krs() {
+  echo Namepace $1
+  echo Application $2
+  kubectl rollout restart deployment $2 -n $1
+}
+
+klog() {
+  echo Namepace $1
+  echo Application $2
+  kubectl logs -f -l app=$2 -n $1
+}
+
+kreapply() {
+  kubectl delete -f $*
+  kubectl apply -f $*
+}
+
+
+
 alias d='docker'
 alias dc='docker-compose'
-alias dcbu='dc down; dc build; dc up;'
+alias dcf="docker-compose $(find docker-compose* | sed -e 's/^/ -f /' | tr -d '\n')"
+alias dcbu='dcf down; dcf build; dcf up;'
+
 
 alias swagger='echo "Starting swagger on port 8888"; d run -p 8888:8080 swaggerapi/swagger-editor'
 

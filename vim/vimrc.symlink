@@ -159,6 +159,10 @@ Plug 'christoomey/vim-system-copy'
 "Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+" Indent guides
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'luochen1990/rainbow'
+
 " JavaScript
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
@@ -176,6 +180,7 @@ Plug 'janko-m/vim-test'
 Plug 'tpope/vim-dispatch'
 
 call plug#end() " required
+
 
 " coc.nvim
 """"""""""
@@ -580,3 +585,8 @@ autocmd FileType markdown noremap <Leader>ll :Pandoc pdf<cr>
 autocmd FileType ruby noremap <leader>ll :!./%<cr>
 autocmd FileType json noremap <leader>ll :!jq %<cr>
 autocmd FileType sh noremap <leader>ll :!./%<cr>
+
+" nathanaelkane/vim-indent-guides
+""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1 
