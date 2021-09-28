@@ -195,6 +195,7 @@ gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-mining-analysis-fitb
 gitlab_clone "researchable/sport-data-valley/MVP" "test-deployment"
 gitlab_clone "researchable/sport-data-valley/MVP" "loadtest"
 gitlab_clone "researchable/sport-data-valley/MVP" "kube-backups"
+gitlab_clone "researchable/sport-data-valley/MVP" "kube-access"
 
 #gitlab_clone "sport-data-valley" "poc-data"
 gitlab_clone "sportdatavalley" "data-mining-analysis-fitbit"
