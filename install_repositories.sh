@@ -160,6 +160,7 @@ gitlab_clone "researchable/general/security" "certificate_quality_checker"
 gitlab_clone "researchable/general/security" "pipeline_checker"
 gitlab_clone "researchable/general/security" "postgres_backup_checker"
 gitlab_clone "researchable/general/security" "mongodb_backup_checker"
+gitlab_clone "researchable/general/security" "general-fix-scripts"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
@@ -170,6 +171,7 @@ gitlab_clone "researchable/general/test-projects" "openwhisk-test"
 gitlab_clone "researchable/general/test-projects" "aws-lambda-ruby-test"
 gitlab_clone "researchable/general/test-projects" "twitter-api-test"
 gitlab_clone "researchable/general/test-projects" "cypress-test"
+gitlab_clone "researchable/general/test-projects" "polar-api-test"
 
 
 gitlab_clone "researchable/ieder-kind-is-anders" "ikia-front-end"
@@ -217,6 +219,8 @@ gitlab_clone "researchable/open-source/forks" "react-add-to-homescreen"
 gitlab_clone "researchable/open-source/openapi" "serverless-lambda-ruby"
 gitlab_clone "researchable/open-source/openapi" "serverless-lambda-node"
 
+gitlab_clone "researchable/open-source/api-gems" "polar-accesslink-api-gem"
+
 # UMO
 gitlab_clone "researchable/projects/umo" "docs"
 gitlab_clone "researchable/projects/umo" "infrastructure"
@@ -234,6 +238,7 @@ gitlab_clone "researchable/projects/ucl-recessly" "base-backend"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
+gitlab_clone "researchable/aukati" "svc-kaikohi"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
 gitlab_clone "researchable/aukati" "svclss-mailer"
