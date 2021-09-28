@@ -160,6 +160,7 @@ gitlab_clone "researchable/general/security" "certificate_quality_checker"
 gitlab_clone "researchable/general/security" "pipeline_checker"
 gitlab_clone "researchable/general/security" "postgres_backup_checker"
 gitlab_clone "researchable/general/security" "mongodb_backup_checker"
+gitlab_clone "researchable/general/security" "general-fix-scripts"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
