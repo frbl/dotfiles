@@ -121,6 +121,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Focused writing
 Plug 'junegunn/goyo.vim'
+Plug 'sotte/presenting.vim'
 
 " Seamless tmux and vim navigation
 Plug 'christoomey/vim-tmux-navigator'
@@ -402,6 +403,7 @@ autocmd BufNewFile,BufRead *.tex set filetype=tex
 nnoremap ; :
 " List the contents of the registers
 map <Leader>p :registers<cr>
+map <Leader>pp :PresentingStart<cr>
 
 " Bind cTRL+movement to move around the windows
 map <c-j> <c-w>j

@@ -104,6 +104,13 @@ rcov() {
   Rscript -e 'covr::package_coverage()'
 }
 
+install_go() {
+  wget -O go-latest.tar.gz "https://dl.google.com/go/$(curl 'https://golang.org/VERSION?m=text').linux-amd64.tar.gz"
+  sudo rm -rf /usr/local/go 
+  sudo tar -C /usr/local -xzf go-latest.tar.gz
+  rm -rf go-latest.tar.gz
+}
+
 rcheck() {
   PACKAGE_NAME=`basename "$PWD"`
   DIR=/tmp/$PACKAGE_NAME
