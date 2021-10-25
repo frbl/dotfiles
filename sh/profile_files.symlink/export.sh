@@ -36,8 +36,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   #export LD_LIBRARY_PATH=$JAVA_HOME/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/server
   #fi
   export TERM=xterm-256color
+  #export GOPATH="/Users/frbl/Workspace"
 else
   export TERM=rxvt-unicode-256color
+  #export GOPATH="/home/frbl/Workspace"
 fi
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 #export JDK_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
@@ -67,7 +69,6 @@ if [ -d "/usr/local/Cellar/r" ]; then
   export R_LIBS_USER="~/.R/lib/$RVERSION/"
 fi
 
-export GOPATH="/Users/frbl/Workspace"
 
 # export SSL_CERT_FILE=/Users/$USER/Workspace/$USER/cacert.pem
 # Path
@@ -87,7 +88,7 @@ export PATH="$PATH:~/.sdkman/candidates/spark/current/bin"
 export PATH="$PATH:~/shared_bin"
 export PATH="$PATH:~/istio-1.1.4/bin"
 export PATH="$PATH:/snap/bin"
-export PATH="$PATH:/usr/local/go/bin"
+#export PATH="$PATH:/usr/local/go/bin"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 # Fabric

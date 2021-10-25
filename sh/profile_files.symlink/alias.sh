@@ -105,10 +105,32 @@ rcov() {
 }
 
 install_go() {
-  wget -O go-latest.tar.gz "https://dl.google.com/go/$(curl 'https://golang.org/VERSION?m=text').linux-amd64.tar.gz"
-  sudo rm -rf /usr/local/go 
-  sudo tar -C /usr/local -xzf go-latest.tar.gz
-  rm -rf go-latest.tar.gz
+  rm -rf "$HOME/.gvm"
+  zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+  source $HOME/.gvm/scripts/gvm
+  gvm install go1.17 -B
+  gvm use go1.17
+}
+
+install_minikube() {
+  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+}
+
+install_operator_sdk() {
+  cd /tmp
+  ARCH=$(case $(uname -m) in x86_64) echo -n amd64 ;; aarch64) echo -n arm64 ;; *) echo -n $(uname -m) ;; esac)
+  OS=$(uname | awk '{print tolower($0)}')
+  OPERATOR_SDK_DL_URL=https://github.com/operator-framework/operator-sdk/releases/download/v1.13.0
+  curl -LO ${OPERATOR_SDK_DL_URL}/operator-sdk_${OS}_${ARCH}
+  gpg --keyserver keyserver.ubuntu.com --recv-keys 052996E2A20B5C7E
+  curl -LO ${OPERATOR_SDK_DL_URL}/checksums.txt
+  curl -LO ${OPERATOR_SDK_DL_URL}/checksums.txt.asc
+  gpg -u "Operator SDK (release) <cncf-operator-sdk@cncf.io>" --verify checksums.txt.asc
+  grep operator-sdk_${OS}_${ARCH} checksums.txt | sha256sum -c -
+  sudo rm -rf /usr/local/bin/operator-sdk
+  chmod +x operator-sdk_${OS}_${ARCH} && sudo mv operator-sdk_${OS}_${ARCH} /usr/local/bin/operator-sdk
+  cd -
 }
 
 rcheck() {
@@ -297,7 +319,10 @@ kreapply() {
 
 alias d='docker'
 alias dc='docker-compose'
-alias dcf="docker-compose $(find docker-compose* | sed -e 's/^/ -f /' | tr -d '\n')"
+dcf() {
+  docker-compose $(find docker-compose* | sed -e 's/^/ -f /' | tr -d '\n')
+}
+
 alias dcbu='dcf down; dcf build; dcf up;'
 
 

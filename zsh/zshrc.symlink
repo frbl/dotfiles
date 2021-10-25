@@ -187,3 +187,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+[[ -s "/home/frbl/.gvm/scripts/gvm" ]] && source "/home/frbl/.gvm/scripts/gvm"

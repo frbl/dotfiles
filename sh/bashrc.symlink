@@ -17,3 +17,5 @@ export PATH="/home/frbl/anaconda3/bin:$PATH"
 export PATH=$PATH:/home/frbl/tizen-studio/platforms/tizen-5.0/common/tidl
 ## End Tizen SDK configuration
 alias ic="ibmcloud"
+
+[[ -s "/home/frbl/.gvm/scripts/gvm" ]] && source "/home/frbl/.gvm/scripts/gvm"
