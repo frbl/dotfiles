@@ -166,6 +166,7 @@ gitlab_clone "researchable/general/security" "general-fix-scripts"
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 gitlab_clone "researchable/general/management" "bookkeeper"
+gitlab_clone "researchable/general/management" "freedcamp"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 gitlab_clone "researchable/general/test-projects" "openwhisk-test"
