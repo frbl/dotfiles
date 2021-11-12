@@ -191,12 +191,17 @@ inoremap <silent><expr> <C-space> coc#refresh()
 let g:coc_global_extensions = [
   \ 'coc-solargraph', 'coc-eslint',  'coc-tsserver',
   \ 'coc-sh',
-  \ 'coc-html', 'coc-css', 'coc-yaml',
+  \ 'coc-go',
+  \ 'coc-html', 
+  \ 'coc-css', 
+  \ 'coc-yaml',
+  \ 'coc-json',
   \ 'coc-marketplace',
   \ 'coc-snippets',
   \ 'coc-swagger',
   \ 'coc-tailwindcss',
-  \ 'coc-docker', 'coc-tslint']
+  \ 'coc-docker',
+  \ 'coc-tslint']
 
 let g:coc_user_config = {
   \ "diagnostic.errorSign": '☠️',

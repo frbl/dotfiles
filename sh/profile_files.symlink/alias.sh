@@ -382,6 +382,17 @@ duald() {
   xrandr --output HDMI-1 --right-of LVDS-1
 }
 
+dualdrighthnksmall() {
+  xrandr --output VGA-1 --off
+  #xrandr --output HDMI-1 --auto
+  xrandr --output DP-1 --auto
+  xrandr --output LVDS-1 --auto
+  #xrandr --output eDP-1 --auto
+  #xrandr --output HDMI-1 --right-of LVDS-1
+  #xrandr --output HDMI-1 --right-of eDP-1
+  xrandr --output DP-1 --right-of LVDS-1
+}
+
 dualdrighthnk() {
   xrandr --output VGA-1 --off
   xrandr --output HDMI-1 --auto
