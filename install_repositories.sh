@@ -71,6 +71,8 @@ tudelft_clone() {
 
 
 
+github_clone "apache" "superset"
+
 github_clone "frbl" "notes"
 github_clone "frbl" "frbl.github.io-private"
 github_clone "frbl" "dotfiles-private"
@@ -139,6 +141,7 @@ gitlab_clone "researchable/general/infrastructure" "kubernetes-restart-deploymen
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
 gitlab_clone "researchable/general/templates/projects" "docs-template"
+gitlab_clone "researchable/general/templates/projects" "react-tailwind-nextjs-typescript"
 
 gitlab_clone "researchable/general/templates/gitlab" "semantic-release"
 gitlab_clone "researchable/general/templates/gitlab" "swagger"
