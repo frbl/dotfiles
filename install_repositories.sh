@@ -84,6 +84,8 @@ tudelft_clone() {
 
 
 
+github_clone "apache" "superset"
+
 github_clone "frbl" "notes"
 github_clone "frbl" "frbl.github.io-private"
 github_clone "frbl" "dotfiles-private"
@@ -152,6 +154,7 @@ gitlab_clone "researchable/general/infrastructure" "kubernetes-restart-deploymen
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
 
 gitlab_clone "researchable/general/templates/projects" "docs-template"
+gitlab_clone "researchable/general/templates/projects" "react-tailwind-nextjs-typescript"
 
 gitlab_clone "researchable/general/templates/gitlab" "semantic-release"
 gitlab_clone "researchable/general/templates/gitlab" "swagger"
@@ -250,6 +253,9 @@ gitlab_clone "researchable/projects/delta-dashboard" "docs"
 gitlab_clone "researchable/projects/ucl-recessly" "docs"
 gitlab_clone "researchable/projects/ucl-recessly" "base-frontend"
 gitlab_clone "researchable/projects/ucl-recessly" "base-backend"
+
+gitlab_clone "researchable/projects/ev-biotech" "poc"
+gitlab_clone "researchable/projects/ev-biotech" "docs"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
