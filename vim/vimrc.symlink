@@ -319,13 +319,13 @@ nnoremap <cr> :TestLast<cr>
 nnoremap <leader>T :TestNearest<cr>
 nnoremap <leader>a :TestSuite<cr>
 
-if g:os == "Darwin"
+if filereadable("bin/be")
   let test#ruby#rspec#executable = 'bin/be rspec'
   let test#javascript#jest#executable = 'bin/be yarn test'
-elseif g:os == "Linux"
-  let test#ruby#rspec#executable = 'bin/be rspec'
-  let test#javascript#jest#executable = 'bin/be yarn test'
-endif
+else
+  let test#ruby#rspec#executable = 'bundle exec rspec'
+  let test#javascript#jest#executable = 'bundle exec yarn test'
+end
 
 " R-language
 """"""""""""

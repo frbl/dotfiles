@@ -41,6 +41,19 @@ gitlab_clone() {
   cd $pre
 }
 
+syntho_clone() {
+  pre=`pwd`
+  org=$1
+  repo=$2
+  mkdir -p $org
+  cd $org
+  if [ ! -d "$2" ]
+  then
+    git clone git@ssh.dev.azure.com:v3/$org/$repo
+  fi
+  cd $pre
+}
+
 roqua_clone() {
   pre=`pwd`
   org=$1
@@ -276,9 +289,8 @@ gitlab_clone "vitens/ecida" "abstract-operator"
 gitlab_clone "vitens/ecida" "utilities"
 gitlab_clone "vitens/ecida/templates" "base"
 
-
-
-
+syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-backend"
+syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-UI"
 
 github_http_clone "jvm-operators" "abstract-operator"
 
