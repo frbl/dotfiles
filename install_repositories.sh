@@ -256,6 +256,9 @@ gitlab_clone "researchable/projects/ucl-recessly" "base-backend"
 
 gitlab_clone "researchable/projects/ev-biotech" "poc"
 gitlab_clone "researchable/projects/ev-biotech" "docs"
+gitlab_clone "researchable/projects/ev-biotech" "base-backend"
+gitlab_clone "researchable/projects/ev-biotech" "base-frontend"
+gitlab_clone "researchable/projects/ev-biotech" "data-access"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
