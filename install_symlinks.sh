@@ -67,6 +67,12 @@ link $DOTFILE_DIR/usr/local/etc/tor/torrc /usr/local/etc/tor/torrc true
 mkdir -p ~/.config/nvim/
 link $DOTFILE_DIR/vim/vimrc.symlink ~/.config/nvim/init.vim
 
+link $DOTFILE_DIR/Wallpapers ~/Wallpapers
+
+# fonts
+link $DOTFILE_DIR/fonts ~/.fonts
+sudo fc-cache
+fc-cache
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   link /home /Users true
@@ -74,10 +80,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   link /Users /home true
 fi
 
-link $DOTFILE_DIR/Wallpapers ~/Wallpapers
-
-# fonts
-link $DOTFILE_DIR/fonts ~/.fonts
-sudo fc-cache
-fc-cache
 

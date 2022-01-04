@@ -1,0 +1,46 @@
+{
+  "*/index.tsx": {
+    "alternate": "{}/index.stories.tsx",
+    "type": "source",
+    "template": [
+      "import {open}FC, ReactElement{close} from 'react'",
+      "//import {open}classnames{close} from 'classnames'",
+      "",
+      "export interface {basename|camelcase|capitalize}Props {",
+      "}",
+      "",
+      "const {basename|camelcase|capitalize}: FC<{basename|camelcase|capitalize}Props> = ({open}{close}): ReactElement => {open}",
+      "  return (<></>)",
+      "{close}",
+      "{basename|camelcase|capitalize}.defaultProps = {open}",
+      "{close}",
+      "export default {basename|camelcase|capitalize}"
+    ]
+  },
+  "*/index.stories.tsx": {
+    "alternate": "{}/index.tsx",
+    "type": "test",
+    "template": [
+      "import {basename|camelcase|capitalize} from './';",
+      "",
+      "export default {",
+      "  component: {basename|camelcase|capitalize},",
+      "  title: 'Atmoic//{basename|camelcase|capitalize}'",
+      "}",
+      "",
+      "const Template = (args) => <{basename|camelcase|capitalize} {open}...args{close} />",
+      "",
+      "export const Default = Template.bind({open}{close})",
+      "Default.args = {",
+      "}"
+    ]
+  },
+  "*.rb": {
+    "alternate": "{}_spec.rb",
+    "type": "source"
+  },
+  "*_spec.rb": {
+    "alternate": "{}.rb",
+    "type": "test"
+  }
+}

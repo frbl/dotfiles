@@ -128,6 +128,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " Repat allows for repeating plugin actions
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-projectionist'
 
 " nerdtree file browser
 Plug 'scrooloose/nerdtree'
@@ -345,6 +346,11 @@ let g:fold_rspec_foldlevel = 2       " sets initial open/closed state of all fol
 let g:fold_rspec_foldcolumn = 4      " shows a 4-character column on the lefthand side of the window displaying the document's fold structure
 let g:fold_rspec_foldclose = 'all'   " closes folds automatically when the cursor is moved out of them (only applies to folds deeper than 'foldlevel')
 let g:fold_rspec_foldminlines = 3    " disables closing of folds containing two lines or fewer
+
+" projectionist
+"""""""""""""""
+map <leader>a :A<CR>
+map <leader>v :AV<CR>
 
 
 " Markdow / Pandoc
