@@ -2,7 +2,7 @@ delay=0
 region=3
 action=4
 show_mouse=0
-screenshot_dir=file:/home/frbl/Pictures
+screenshot_dir=file:/home/frbl/Workspace/researchable/projects/ev-biotech/docs/docs/2-Getting-started/images
 app=/usr/bin/google-chrome-stable
 last_user=
 

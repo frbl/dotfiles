@@ -185,6 +185,7 @@ gitlab_clone "researchable/general/management" "bookkeeper"
 gitlab_clone "researchable/general/management" "freedcamp"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
+gitlab_clone "researchable/general/test-projects" "messagequeue-test"
 gitlab_clone "researchable/general/test-projects" "openwhisk-test"
 gitlab_clone "researchable/general/test-projects" "aws-lambda-ruby-test"
 gitlab_clone "researchable/general/test-projects" "twitter-api-test"
