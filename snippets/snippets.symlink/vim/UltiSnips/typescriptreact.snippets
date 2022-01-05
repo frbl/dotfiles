@@ -1,15 +1,16 @@
 # General
 snippet init "init"
-import React from 'react'
+import {FC, ReactElement} from 'react'
+//import {classnames} from 'classnames'
 
-type Props = {
-  example?: string
+export interface $1Props {
 }
 
-const $1 = ({example}: Props) => (
-  <input type={type} id={id} name={name} />
-)
-
+const $1: FC<$1Props> = ({}): ReactElement => {
+  return (<></>)
+}
+$1.defaultProps = {
+}
 export default $1
 endsnippet
 
