@@ -318,7 +318,7 @@ kreapply() {
 alias d='docker'
 alias dc='docker-compose'
 dcf() {
-  docker-compose $(find docker-compose* | sed -e 's/^/ -f /' | tr -d '\n')
+  docker-compose $(find docker-compose* | sed -e 's/^/ -f /' | tr -d '\n') $1
 }
 
 alias dcbu='dcf down; dcf build; dcf up;'
