@@ -61,7 +61,7 @@ IFS="$OIFS"
 link $DOTFILE_DIR/etc/ssh/ssh_config /etc/ssh/ssh_config true
 link $DOTFILE_DIR/etc/ssh/sshd_config /etc/ssh/sshd_config true
 
-mkdir -p /usr/local/etc/tor
+sudo mkdir -p /usr/local/etc/tor
 link $DOTFILE_DIR/usr/local/etc/tor/torrc /usr/local/etc/tor/torrc true
 
 mkdir -p ~/.config/nvim/
