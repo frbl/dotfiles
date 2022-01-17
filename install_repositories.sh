@@ -241,6 +241,7 @@ gitlab_clone "researchable/open-source/openapi" "serverless-lambda-ruby"
 gitlab_clone "researchable/open-source/openapi" "serverless-lambda-node"
 
 gitlab_clone "researchable/open-source/api-gems" "polar-accesslink-api-gem"
+gitlab_clone "researchable/open-source" "quest-management-interface"
 
 # UMO
 gitlab_clone "researchable/projects/umo" "docs"
