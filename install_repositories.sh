@@ -134,6 +134,8 @@ gitlab_clone "researchable" "quest-front-end"
 gitlab_clone "researchable/general/landingpages" "landingpage-v2"
 gitlab_clone "researchable/general/landingpages" "landingpage"
 gitlab_clone "researchable/general/landingpages" "abl"
+gitlab_clone "researchable/general/style" "eslint"
+gitlab_clone "researchable/general/style" "rubocop"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable" "renovate"
 
