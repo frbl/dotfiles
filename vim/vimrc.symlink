@@ -145,6 +145,7 @@ Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'tpope/vim-fugitive'
+Plug 'tveskag/nvim-blame-line'
 Plug 'airblade/vim-gitgutter'
 
 " Surround words with open and closing sign (cs<char>, i.e., cs; -> 'helloworld')
@@ -394,6 +395,11 @@ let g:netrw_list_hide = netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+' 
 autocmd FileType netrw setlocal bufhidden=delete
 "map <C-n> :Lexplore<CR>
+"
+
+" nvim-blame-line
+"""""""""""""""""
+autocmd BufEnter * EnableBlameLine
 
 " TMUX
 """"""

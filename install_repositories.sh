@@ -134,6 +134,8 @@ gitlab_clone "researchable" "quest-front-end"
 gitlab_clone "researchable/general/landingpages" "landingpage-v2"
 gitlab_clone "researchable/general/landingpages" "landingpage"
 gitlab_clone "researchable/general/landingpages" "abl"
+gitlab_clone "researchable/general/style" "eslint"
+gitlab_clone "researchable/general/style" "rubocop"
 gitlab_clone "researchable" "presentations"
 gitlab_clone "researchable" "renovate"
 
@@ -185,6 +187,7 @@ gitlab_clone "researchable/general/management" "bookkeeper"
 gitlab_clone "researchable/general/management" "freedcamp"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
+gitlab_clone "researchable/general/test-projects" "messagequeue-test"
 gitlab_clone "researchable/general/test-projects" "openwhisk-test"
 gitlab_clone "researchable/general/test-projects" "aws-lambda-ruby-test"
 gitlab_clone "researchable/general/test-projects" "twitter-api-test"
@@ -238,6 +241,7 @@ gitlab_clone "researchable/open-source/openapi" "serverless-lambda-ruby"
 gitlab_clone "researchable/open-source/openapi" "serverless-lambda-node"
 
 gitlab_clone "researchable/open-source/api-gems" "polar-accesslink-api-gem"
+gitlab_clone "researchable/open-source" "quest-management-interface"
 
 # UMO
 gitlab_clone "researchable/projects/umo" "docs"

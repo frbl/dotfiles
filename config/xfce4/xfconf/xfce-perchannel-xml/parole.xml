@@ -5,12 +5,12 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/frbl/Workspace/researchable/sport-data-valley/MVP/integration-tests/cypress/videos/oauth"/>
+    <property name="last-used-media" type="string" value="/tmp/xa-16KOF1"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="false"/>
-    <property name="width" type="int" value="728"/>
-    <property name="height" type="int" value="1436"/>
+    <property name="width" type="int" value="839"/>
+    <property name="height" type="int" value="1396"/>
   </property>
   <property name="audio" type="empty">
     <property name="volume" type="int" value="50"/>

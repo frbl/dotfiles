@@ -13,8 +13,12 @@ const $1 = ({example}: Props) => (
 export default $1
 endsnippet
 
+snippet con "Logging"
+import consola from 'consola/src/browser'
+endsnippet
+
 snippet cl "Logging"
-console.log($0);
+consola.info($0);
 endsnippet
 
 snippet pdb "Debugger"
