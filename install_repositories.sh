@@ -271,6 +271,7 @@ gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "svc-payments"
+gitlab_clone "researchable/aukati" "gem-researchable"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"

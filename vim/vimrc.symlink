@@ -209,6 +209,14 @@ let g:coc_global_extensions = [
   \ 'coc-tslint']
 
 let g:coc_user_config = {
+  \ "sorbet": {
+  \   "command": "srb",
+  \   "args": ["tc", "--lsp", "--enable-all-experimental-lsp-features"],
+  \   "filetypes": ["ruby"],
+  \   "rootPatterns": ["sorbet/config"],
+  \   "initializationOptions": {},
+  \   "settings": {}
+  \ },
   \ "diagnostic.errorSign": '☠️',
   \ "diagnostic.warningSign": '⚠',
   \ "diagnostic.infoSign": '⚐',
