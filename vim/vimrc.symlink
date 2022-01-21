@@ -148,6 +148,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tveskag/nvim-blame-line'
 Plug 'airblade/vim-gitgutter'
 
+" documentation
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
 " Surround words with open and closing sign (cs<char>, i.e., cs; -> 'helloworld')
 Plug 'tpope/vim-surround'
 
