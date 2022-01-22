@@ -168,6 +168,8 @@ gitlab_clone "researchable/general/templates/gitlab" "documentation"
 gitlab_clone "researchable/general/templates/gitlab" "upstream-mirror"
 gitlab_clone "researchable/general/templates/gitlab" "dependency-scanning-test"
 gitlab_clone "researchable/general/templates/gitlab" "es-check-test"
+gitlab_clone "researchable/general/templates/gitlab" "freedcamp-pre-test"
+gitlab_clone "researchable/general/templates/gitlab" "freedcamp-post-deploy"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
