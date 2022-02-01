@@ -187,6 +187,7 @@ gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 gitlab_clone "researchable/general/management" "bookkeeper"
 gitlab_clone "researchable/general/management" "freedcamp"
+gitlab_clone "researchable/general/management" "gitlab-webhooks"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 gitlab_clone "researchable/general/test-projects" "messagequeue-test"
