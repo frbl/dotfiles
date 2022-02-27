@@ -168,8 +168,6 @@ gitlab_clone "researchable/general/templates/gitlab" "documentation"
 gitlab_clone "researchable/general/templates/gitlab" "upstream-mirror"
 gitlab_clone "researchable/general/templates/gitlab" "dependency-scanning-test"
 gitlab_clone "researchable/general/templates/gitlab" "es-check-test"
-gitlab_clone "researchable/general/templates/gitlab" "freedcamp-pre-test"
-gitlab_clone "researchable/general/templates/gitlab" "freedcamp-post-deploy"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
@@ -187,7 +185,6 @@ gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 gitlab_clone "researchable/general/management" "bookkeeper"
 gitlab_clone "researchable/general/management" "freedcamp"
-gitlab_clone "researchable/general/management" "gitlab-webhooks"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 gitlab_clone "researchable/general/test-projects" "messagequeue-test"
@@ -244,7 +241,6 @@ gitlab_clone "researchable/open-source/openapi" "serverless-lambda-ruby"
 gitlab_clone "researchable/open-source/openapi" "serverless-lambda-node"
 
 gitlab_clone "researchable/open-source/api-gems" "polar-accesslink-api-gem"
-gitlab_clone "researchable/open-source/api-gems" "freedcamp-api-gem"
 gitlab_clone "researchable/open-source" "quest-management-interface"
 
 # UMO
@@ -275,7 +271,6 @@ gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "svc-payments"
-gitlab_clone "researchable/aukati" "gem-researchable"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"

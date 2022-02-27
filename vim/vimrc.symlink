@@ -145,11 +145,8 @@ Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'tpope/vim-fugitive'
-"Plug 'tveskag/nvim-blame-line'
+Plug 'tveskag/nvim-blame-line'
 Plug 'airblade/vim-gitgutter'
-
-" documentation
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " Surround words with open and closing sign (cs<char>, i.e., cs; -> 'helloworld')
 Plug 'tpope/vim-surround'
@@ -192,12 +189,11 @@ call plug#end() " required
 """"""""""
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 inoremap <silent><expr> <C-space> coc#refresh()
-" Line is needed to also autoimport when needed (use enter to complete)
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 let g:coc_global_extensions = [
   \ 'coc-solargraph', 'coc-eslint',  'coc-tsserver',
   \ 'coc-sh',
+  \ 'coc-pyright',
   \ 'coc-go',
   \ 'coc-html', 
   \ 'coc-css', 
@@ -245,7 +241,6 @@ let g:coc_user_config = {
 command! -nargs=0 Format :call CocAction('format')
 noremap <Leader>] :Format<CR>
 
-
 " GoTo code navigation.
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
@@ -279,11 +274,12 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
 "inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" vim-Doge
-let g:doge_mapping='<Leader>c'
-
 
 " use sv to reload vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
@@ -404,7 +400,7 @@ autocmd FileType netrw setlocal bufhidden=delete
 
 " nvim-blame-line
 """""""""""""""""
-"autocmd BufEnter * EnableBlameLine
+autocmd BufEnter * EnableBlameLine
 
 " TMUX
 """"""
