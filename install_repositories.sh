@@ -267,6 +267,7 @@ gitlab_clone "researchable/projects/ev-biotech" "docs"
 gitlab_clone "researchable/projects/ev-biotech" "base-backend"
 gitlab_clone "researchable/projects/ev-biotech" "base-frontend"
 gitlab_clone "researchable/projects/ev-biotech" "data-access"
+gitlab_clone "researchable/projects/ev-biotech" "neo4j-poller"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
@@ -311,4 +312,7 @@ syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-backend"
 syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-UI"
 
 github_http_clone "jvm-operators" "abstract-operator"
+github_clone "to314as" "HeartRateModel_WielerFitheid"
+
+github_clone "ecida" "docs"
 
