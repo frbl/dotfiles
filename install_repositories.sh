@@ -313,6 +313,7 @@ syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-UI"
 
 github_http_clone "jvm-operators" "abstract-operator"
 github_clone "to314as" "HeartRateModel_WielerFitheid"
+ln -s /home/frbl/Workspace/to314as/HeartRateModel_WielerFitheid /home/frbl/Workspace/researchable/sport-data-valley/MVP/svc-wielerfitheid
 
 github_clone "ecida" "docs"
 
