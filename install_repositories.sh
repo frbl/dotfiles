@@ -182,6 +182,7 @@ gitlab_clone "researchable/general/security" "dmarc_checker"
 gitlab_clone "researchable/general/security" "postgres_backup_checker"
 gitlab_clone "researchable/general/security" "mongodb_backup_checker"
 gitlab_clone "researchable/general/security" "general-fix-scripts"
+gitlab_clone "researchable/general/security" "chaos_monkey"
 
 gitlab_clone "researchable/projects/certibot" "docs"
 
@@ -272,6 +273,7 @@ gitlab_clone "researchable/projects/ev-biotech" "base-frontend"
 gitlab_clone "researchable/projects/ev-biotech" "data-access"
 gitlab_clone "researchable/projects/ev-biotech" "neo4j-poller"
 gitlab_clone "researchable/projects/ev-biotech" "infrastructure"
+gitlab_clone "researchable/projects/ev-biotech" "composer"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
