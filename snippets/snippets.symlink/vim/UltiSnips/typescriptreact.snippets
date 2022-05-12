@@ -53,3 +53,18 @@ const use$1Hook = (): I$1Hook => {
 export default use$1Hook
 
 endsnippet
+
+snippet initstory "initstory"
+import $1 from './';
+
+export default {
+  component: $1,
+  title: 'Atomic/$2/$1',
+};
+
+const Template = args => <$1 {...args}/>;
+
+export const Primary = Template.bind({});
+Primary.args = { };
+
+endsnippet

@@ -3,6 +3,6 @@ region=3
 action=4
 show_mouse=0
 screenshot_dir=file:/home/frbl/Downloads
-app=/usr/bin/google-chrome-stable
+app=/usr/lib/firefox-esr/firefox-esr
 last_user=
 

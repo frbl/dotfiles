@@ -180,6 +180,9 @@ gitlab_clone "researchable/general/security" "dmarc_checker"
 gitlab_clone "researchable/general/security" "postgres_backup_checker"
 gitlab_clone "researchable/general/security" "mongodb_backup_checker"
 gitlab_clone "researchable/general/security" "general-fix-scripts"
+gitlab_clone "researchable/general/security" "chaos_monkey"
+
+gitlab_clone "researchable/projects/certibot" "docs"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
@@ -208,6 +211,7 @@ gitlab_clone "researchable/sport-data-valley/sdv" "svc-data-quality-checker"
 gitlab_clone "researchable/sport-data-valley/sdv" "feature-test"
 
 gitlab_clone "researchable/sport-data-valley/MVP" "base-platform"
+gitlab_clone "researchable/sport-data-valley/MVP" "base-frontend"
 gitlab_clone "researchable/sport-data-valley/MVP" "infrastructure"
 gitlab_clone "researchable/sport-data-valley/MVP" "integration-tests"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-integrations"
@@ -266,6 +270,8 @@ gitlab_clone "researchable/projects/ev-biotech" "base-backend"
 gitlab_clone "researchable/projects/ev-biotech" "base-frontend"
 gitlab_clone "researchable/projects/ev-biotech" "data-access"
 gitlab_clone "researchable/projects/ev-biotech" "neo4j-poller"
+gitlab_clone "researchable/projects/ev-biotech" "infrastructure"
+gitlab_clone "researchable/projects/ev-biotech" "composer"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
