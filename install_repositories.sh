@@ -215,6 +215,7 @@ gitlab_clone "researchable/sport-data-valley/sdv" "feature-test"
 
 gitlab_clone "researchable/sport-data-valley/MVP" "base-platform"
 gitlab_clone "researchable/sport-data-valley/MVP" "base-frontend"
+gitlab_clone "researchable/sport-data-valley/MVP" "svc-wielerfitheid"
 gitlab_clone "researchable/sport-data-valley/MVP" "infrastructure"
 gitlab_clone "researchable/sport-data-valley/MVP" "integration-tests"
 gitlab_clone "researchable/sport-data-valley/MVP" "svc-data-integrations"
@@ -319,7 +320,8 @@ syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-UI"
 
 github_http_clone "jvm-operators" "abstract-operator"
 github_clone "to314as" "HeartRateModel_WielerFitheid"
-ln -s /home/frbl/Workspace/to314as/HeartRateModel_WielerFitheid /home/frbl/Workspace/researchable/sport-data-valley/MVP/svc-wielerfitheid
+ln -s /home/frbl/Workspace/to314as/HeartRateModel_WielerFitheid/ /home/frbl/Workspace/researchable/sport-data-valley/MVP/svc-wielerfitheid
 
 github_clone "ecida" "docs"
+github_clone "ecida" "ecida-dashboard"
 

@@ -321,6 +321,11 @@ dcf() {
   docker-compose $(find docker-compose* | sed -e 's/^/ -f /' | tr -d '\n') $1
 }
 
+sonarcube() {
+  echo 'Open http://localhost:9000 to access the webinterface...'
+  docker run --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
+}
+
 alias dcbu='dcf down; dcf build; dcf up;'
 
 
