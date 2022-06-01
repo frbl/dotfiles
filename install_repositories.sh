@@ -278,6 +278,7 @@ gitlab_clone "researchable/projects/ev-biotech" "composer"
 
 # Aukati
 gitlab_clone "researchable/aukati" "svc-auth"
+gitlab_clone "researchable/aukati" "svc-groups"
 gitlab_clone "researchable/aukati" "svc-kaikohi"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
