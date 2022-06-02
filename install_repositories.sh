@@ -323,3 +323,6 @@ ln -s /home/frbl/Workspace/to314as/HeartRateModel_WielerFitheid/ /home/frbl/Work
 github_clone "ecida" "docs"
 github_clone "ecida" "ecida-dashboard"
 
+github_clone "algorand" "auction-demo"
+
+
