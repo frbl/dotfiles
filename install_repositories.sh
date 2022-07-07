@@ -90,6 +90,7 @@ github_clone "frbl" "notes"
 github_clone "frbl" "frbl.github.io-private"
 github_clone "frbl" "dotfiles-private"
 github_clone "frbl" "dotfiles"
+github_clone "frbl" "nixfiles"
 github_clone "frbl" "machine-learning-recurring-depression"
 github_clone "frbl" "onlinesuperlearner"
 github_clone "frbl" "vagrant-boxes"
@@ -129,6 +130,9 @@ github_clone "rug-ds-lab" "2021-msc-ecida-open-source"
 github_clone "kasperdokter" "dsu"
 github_clone "mhadadian" "ecida-mvp"
 
+gitlab_clone "ecida/examples" "house-prediction"
+github_clone "ecida" "ecida.admin"
+github_clone "ecida" "ecida.admin.server"
 
 gitlab_clone "researchable" "quest-front-end"
 gitlab_clone "researchable/general/landingpages" "landingpage-v2"
@@ -185,6 +189,7 @@ gitlab_clone "researchable/general/security" "general-fix-scripts"
 gitlab_clone "researchable/general/security" "chaos_monkey"
 
 gitlab_clone "researchable/projects/certibot" "docs"
+gitlab_clone "researchable/projects/certibot" "base-backend"
 
 gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
@@ -282,6 +287,7 @@ gitlab_clone "researchable/aukati" "svc-groups"
 gitlab_clone "researchable/aukati" "svc-kaikohi"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "docs"
+gitlab_clone "researchable/aukati" "svc-docx"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "svc-payments"
 gitlab_clone "researchable/aukati" "gem-researchable"
@@ -321,7 +327,7 @@ syntho_clone "syntho/Syntho%20Engine%20Application" "syntho-engine-UI"
 
 github_http_clone "jvm-operators" "abstract-operator"
 github_clone "to314as" "HeartRateModel_WielerFitheid"
-ln -s /home/frbl/Workspace/to314as/HeartRateModel_WielerFitheid/ /home/frbl/Workspace/researchable/sport-data-valley/MVP/svc-wielerfitheid
+#ln -s /home/frbl/Workspace/to314as/HeartRateModel_WielerFitheid/ /home/frbl/Workspace/researchable/sport-data-valley/MVP/svc-wielerfitheid
 
 github_clone "ecida" "docs"
 github_clone "ecida" "ecida-dashboard"
