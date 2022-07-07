@@ -82,6 +82,19 @@ tudelft_clone() {
   cd $pre
 }
 
+astrowise_clone() {
+  pre=`pwd`
+  org=$1
+  repo=$2
+  folder=$3
+  mkdir -p $folder
+  cd $folder
+  if [ ! -d "$2" ]
+  then
+    git clone git@gitlab.astro-wise.org:$org/$repo.git
+  fi
+  cd $pre
+}
 
 
 github_clone "apache" "superset"
@@ -172,8 +185,6 @@ gitlab_clone "researchable/general/templates/gitlab" "documentation"
 gitlab_clone "researchable/general/templates/gitlab" "upstream-mirror"
 gitlab_clone "researchable/general/templates/gitlab" "dependency-scanning-test"
 gitlab_clone "researchable/general/templates/gitlab" "es-check-test"
-gitlab_clone "researchable/general/templates/gitlab" "freedcamp-pre-test"
-gitlab_clone "researchable/general/templates/gitlab" "freedcamp-post-deploy"
 
 gitlab_clone "researchable/general/security" "vulnerability-scanning"
 gitlab_clone "researchable/general/security" "kubernetes-rbac"
@@ -195,7 +206,6 @@ gitlab_clone "researchable/general/management" "freedcamp-hour-counter"
 gitlab_clone "researchable/general/management" "freedcamp-hour-importer"
 gitlab_clone "researchable/general/management" "bookkeeper"
 gitlab_clone "researchable/general/management" "freedcamp"
-gitlab_clone "researchable/general/management" "gitlab-webhooks"
 
 gitlab_clone "researchable/general/test-projects" "pay-nl-test"
 gitlab_clone "researchable/general/test-projects" "messagequeue-test"
@@ -232,6 +242,8 @@ gitlab_clone "researchable/sport-data-valley/MVP" "test-deployment"
 gitlab_clone "researchable/sport-data-valley/MVP" "loadtest"
 gitlab_clone "researchable/sport-data-valley/MVP" "kube-backups"
 gitlab_clone "researchable/sport-data-valley/MVP" "kube-access"
+gitlab_clone "researchable/sport-data-valley/MVP" "notebook-executor"
+
 
 #gitlab_clone "sport-data-valley" "poc-data"
 gitlab_clone "sportdatavalley" "data-mining-analysis-fitbit"
@@ -254,7 +266,6 @@ gitlab_clone "researchable/open-source/openapi" "serverless-lambda-ruby"
 gitlab_clone "researchable/open-source/openapi" "serverless-lambda-node"
 
 gitlab_clone "researchable/open-source/api-gems" "polar-accesslink-api-gem"
-gitlab_clone "researchable/open-source/api-gems" "freedcamp-api-gem"
 gitlab_clone "researchable/open-source" "quest-management-interface"
 
 # UMO
@@ -290,7 +301,6 @@ gitlab_clone "researchable/aukati" "docs"
 gitlab_clone "researchable/aukati" "svc-docx"
 gitlab_clone "researchable/aukati" "svclss-mailer"
 gitlab_clone "researchable/aukati" "svc-payments"
-gitlab_clone "researchable/aukati" "gem-researchable"
 
 roqua_clone "ishared" "prediction-model-r" "researchable/samen-sturen"
 roqua_clone "ishared" "clustering-model-r-raw" "researchable/samen-sturen"
@@ -304,6 +314,8 @@ roqua_clone "roqua" "roqua" "roqua"
 roqua_clone "roqua" "compose" "roqua"
 roqua_clone "roqua" "core" "roqua"
 roqua_clone "roqua" "questionnaires" "roqua" 
+
+astrowise_clone "fieldlabs" "deepatlas"
 
 tudelft_clone "umo-development" "umo-ckan" "umo-development"
 tudelft_clone "umo-development" "ckanuploadclient-java" "umo-development"
@@ -331,4 +343,7 @@ github_clone "to314as" "HeartRateModel_WielerFitheid"
 
 github_clone "ecida" "docs"
 github_clone "ecida" "ecida-dashboard"
+
+github_clone "algorand" "auction-demo"
+
 
