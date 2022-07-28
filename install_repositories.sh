@@ -198,6 +198,7 @@ gitlab_clone "researchable/general/security" "postgres_backup_checker"
 gitlab_clone "researchable/general/security" "mongodb_backup_checker"
 gitlab_clone "researchable/general/security" "general-fix-scripts"
 gitlab_clone "researchable/general/security" "chaos_monkey"
+gitlab_clone "researchable/general/security" "gitlab_backup"
 
 gitlab_clone "researchable/projects/certibot" "docs"
 gitlab_clone "researchable/projects/certibot" "base-backend"
@@ -315,7 +316,7 @@ roqua_clone "roqua" "compose" "roqua"
 roqua_clone "roqua" "core" "roqua"
 roqua_clone "roqua" "questionnaires" "roqua" 
 
-astrowise_clone "fieldlabs" "deepatlas"
+astrowise_clone "fieldlabs" "deepatlas" "researchable/projects/deepatlas"
 
 tudelft_clone "umo-development" "umo-ckan" "umo-development"
 tudelft_clone "umo-development" "ckanuploadclient-java" "umo-development"

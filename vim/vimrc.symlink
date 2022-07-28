@@ -145,7 +145,7 @@ Plug 'junegunn/fzf.vim'
 
 " git integration
 Plug 'tpope/vim-fugitive'
-Plug 'tveskag/nvim-blame-line'
+"Plug 'tveskag/nvim-blame-line'
 Plug 'airblade/vim-gitgutter'
 
 " Surround words with open and closing sign (cs<char>, i.e., cs; -> 'helloworld')
@@ -400,7 +400,7 @@ autocmd FileType netrw setlocal bufhidden=delete
 
 " nvim-blame-line
 """""""""""""""""
-autocmd BufEnter * EnableBlameLine
+"autocmd BufEnter * EnableBlameLine
 
 " TMUX
 """"""
@@ -453,6 +453,8 @@ autocmd BufEnter * execute 'sign place 9999 line=1 name=dummy buffer=' . bufnr('
 " Easier indenting code blocks
 vnoremap < <gv
 vnoremap > >gv
+
+cnoreabbrev Gblame Git blame 
 
 " Better navigation in wrapped lines
 noremap j gj

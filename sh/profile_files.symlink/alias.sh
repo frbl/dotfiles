@@ -288,6 +288,7 @@ alias gcob='g cob'
 
 # docker / kube
 alias k='kubectl'
+alias kw='watch -n kubectl'
 ksh() {
   echo Namepace $1
   echo Application $2
