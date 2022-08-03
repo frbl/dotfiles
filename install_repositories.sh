@@ -171,6 +171,7 @@ gitlab_clone "researchable/general/docker-images" "mongosh"
 gitlab_clone "researchable/general/infrastructure" "kubernetes-restart-deployments"
 
 gitlab_clone "researchable/general/gitlab" "runner-infrastructure"
+gitlab_clone "researchable/general" "kubernetes-runners"
 
 gitlab_clone "researchable/general/templates/projects" "docs-template"
 gitlab_clone "researchable/general/templates/projects" "react-tailwind-nextjs-typescript"
