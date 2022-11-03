@@ -12,6 +12,8 @@ alias dus='du -sh -d1 * | gsort -h'
 
 alias pw='openssl rand -base64 32'
 
+alias kubeseal='$(go env GOPATH)/bin/kubeseal'
+
 function encrypt { gpg --output $1.gpg --encrypt --recipient 743F90E1 $1; }
 function decrypt { gpg --decrypt $1;}
 
@@ -324,6 +326,7 @@ dcf() {
 
 sonarcube() {
   echo 'Open http://localhost:9000 to access the webinterface...'
+  xdg-open http://localhost:9000
   docker run --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
 }
 
